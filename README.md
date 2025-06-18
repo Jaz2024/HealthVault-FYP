@@ -1,4 +1,4 @@
-# HealthVault-FYP
+# Final Year Project: HealthVault
 
 HealthVault is a web-based application developed for my Final Year Project (FYP), designed to store and analyze personal health data. Users can  input their health information, which is then analyzed to provide personalized health tips and identify potential health risks.
 
