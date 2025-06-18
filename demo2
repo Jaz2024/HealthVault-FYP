@@ -1,0 +1,1704 @@
+$fullname = trim($_POST['fullname']);
+$dob = trim($_POST['dob']);
+$gender = trim($_POST['gender']);
+$bloodType = trim($_POST['blood-type']);
+$status = trim($_POST['status']);
+$tel = trim($_POST['tel']);
+$emergencyName = trim($_POST['emergency-name']);
+$emergencyTel = trim($_POST['emergency-tel']);
+$streetaddress = trim($_POST['street-address']);
+$city = trim($_POST['city']);
+$state = trim($_POST['state']);
+$postalcode = trim($_POST['postal-code']);
+$chroniccondition = trim($_POST['cc']);
+$surgeries = trim($_POST['surgeries']);
+$vaccine = trim($_POST['vaccine']);
+$dateadministered = trim($_POST['date-administered']);
+$medication = trim($_POST['medication']);
+$dosage = trim($_POST['dosage']);
+$frequency = trim($_POST['frequency']);
+$bloodpressure = trim($_POST['blood-pressure']);
+$heartrate = trim($_POST['heart-rate']);
+$height = trim($_POST['height']);
+$weight = trim($_POST['weight']);
+$bmiResult = trim($_POST['bmiResult']);
+$test = trim($_POST['test']);
+$testResult = trim($_POST['result']);
+$dob2 = trim($_POST['dob2']);
+$diet = trim($_POST['diet']);
+$exercise = trim($_POST['exercise']);
+$tobacco_use = trim($_POST['tobaccoUse']);
+$alcohol_use = trim($_POST['alcohol']);
+$sleep = trim($_POST['sleep']);
+$provider_name = trim($_POST['provider_name']);
+$provider_tel = trim($_POST['provider_tel']);
+$facility_name = trim($_POST['facility_name']);
+$facility_address = trim($_POST['facility_address']);
+$recordtitle = trim($_POST['title']);
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Account registration form</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<style>
+html, body {
+min-height: 100%;
+}
+body, div, form, input, select, p { 
+padding: 0;
+margin: 0;
+outline: none;
+font-family: Roboto, Arial, sans-serif;
+font-size: 14px;
+color: #666;
+}
+h1 {
+margin: 0;
+font-weight: 400;
+}
+h3 {
+margin: 12px 0;
+color: #00c6a9;
+} 
+.main-block {
+display: flex;
+justify-content: center;
+align-items: center;
+background: #fff;
+}
+form {
+width: 100%;
+padding: 20px;
+}
+fieldset {
+border: none;
+border-top: 1px solid #00c6a9;;
+}
+.account-details, .personal-details {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.account-details >div, .personal-details >div >div {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+.account-details >div, .personal-details >div, input, label {
+width: 100%;
+}
+label {
+padding: 0 5px;
+text-align: right;
+vertical-align: middle;
+}
+input {
+padding: 5px;
+vertical-align: middle;
+}
+.checkbox {
+margin-bottom: 10px;
+}
+select, .children, .gender, .bdate-block {
+width: calc(100% + 26px);
+padding: 5px 0;
+}
+select {
+background: transparent;
+}
+.gender input {
+width: auto;
+} 
+.gender label {
+padding: 0 5px 0 0;
+} 
+.bdate-block {
+display: flex;
+justify-content: space-between;
+}
+.birthdate select.day {
+width: 35px;
+}
+.birthdate select.mounth {
+width: calc(100% - 94px);
+}
+.birthdate input {
+width: 38px;
+vertical-align: unset;
+}
+.checkbox input, .children input {
+width: auto;
+margin: -2px 10px 0 0;
+}
+.checkbox a {
+color: #00c6a9;;
+}
+.checkbox a:hover {
+color: #00c6a9;;
+}
+button {
+width: 100%;
+padding: 10px 0;
+margin: 10px auto;
+border-radius: 5px; 
+border: none;
+background: #00c6a9;; 
+font-size: 14px;
+font-weight: 600;
+color: #fff;
+}
+button:hover {
+background: #00c6a9;;
+}
+@media (min-width: 568px) {
+.account-details >div, .personal-details >div {
+width: 50%;
+}
+label {
+width: 40%;
+}
+input {
+width: 60%;
+}
+select, .children, .gender, .bdate-block {
+width: calc(60% + 16px);
+padding: 5px;
+}
+}
+
+.account-details2 {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.account-details2 >div >div {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+.account-details2 >div input, label {
+width: 100%;
+}
+
+input.dob-field::-webkit-datetime-edit-day-field {
+    display: none;
+}
+input.dob-field::-webkit-datetime-edit-text {
+    display: none;
+}
+
+
+
+/* Button styling */
+#add-medication-field-btn,
+#add-immunization-field-btn,
+#add-test-field-btn,
+#add-facility-field-btn{
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue background color */
+  color: white;
+  font-size: 13px; /* Adjust the font size as needed */
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Hover effect */
+#add-medication-field-btn:hover,
+#add-immunization-field-btn:hover,
+#add-test-field-btn:hover,
+#add-facility-field-btn:hover{
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Focus effect */
+#add-medication-field-btn:focus,
+#add-immunization-field-btn:focus,
+#add-test-field-btn:focus,
+#add-facility-field-btn:focus{
+  outline: none;
+  box-shadow: 0 0 4px #0056b3; /* Focus shadow with a darker blue */
+}
+
+/* Disabled state */
+#add-medication-field-btn:disabled,
+#add-immunization-field-btn:disabled,
+#add-test-field-btn:disabled,
+#add-facility-field-btn:disabled{
+  background-color: #b0c4de; /* Lighter blue when disabled */
+  cursor: not-allowed;
+}
+
+/* Delete Button styling */
+#delete-medication-field-btn,
+#delete-immunization-field-btn,
+#delete-test-field-btn,
+#delete-facility-field-btn {
+  padding: 10px 20px;
+  background-color: #ff0000; /* Red background color */
+  color: white;
+  font-size: 13px; /* Adjust the font size as needed */
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Hover effect */
+#delete-medication-field-btn:hover,
+#delete-immunization-field-btn:hover,
+#delete-test-field-btn:hover,
+#delete-facility-field-btn:hover {
+  background-color: #b30000; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Focus effect */
+#delete-medication-field-btn:focus,
+#delete-immunization-field-btn:focus,
+#delete-test-field-btn:focus,
+#delete-facility-field-btn:focus {
+  outline: none;
+  box-shadow: 0 0 4px #b30000; /* Focus shadow with a darker red */
+}
+
+/* Disabled state */
+#delete-medication-field-btn:disabled,
+#delete-immunization-field-btn:disabled,
+#delete-test-field-btn:disabled,
+#delete-facility-field-btn:disabled  {
+  background-color: #b0c4de; /* Lighter color when disabled */
+  cursor: not-allowed;
+}
+</style>
+</head>
+<body>
+<div class="main-block">
+  <form action="process-health-data-form.php" method="post" id="health-data-form">
+    <h1>Create Your Health Data</h1>
+      <fieldset>
+        <legend>
+          <h3>Personal Information</h3>
+        </legend>
+        <div class="account-details">
+          <div><label for="fullname">Full Name</label><input type="text" name="fullname" id="fullname" required></div>
+          <div><label for="dob">Date Of Birth</label><input type="date" name="dob" id="dob" min="1940-01-01" max="2025-12-31" required></div>
+          <div>
+            <label for="gender">Gender</label>
+            <select name="gender" id="gender" required aria-label="Select your gender" >
+              <option value="" disabled selected> Select your gender</option>
+              <option value="Man">Man</option>
+              <option value="Woman">Woman</option>
+              <option value="Non-Binary">Non-Binary</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+          <div>
+            <label for="blood-type">Blood Type</label>
+            <select name="blood-type" id="blood-type" required>
+              <option value="" disabled selected>Select Blood Group</option>
+              <option value="A-Postive">A Positive</option>
+              <option value="A-Negative">A Negative</option>
+              <option value="B-Positive">B Positive</option>
+              <option value="B-Negative">B Negative</option>
+              <option value="AB-Positive">AB Positive</option>
+              <option value="AB-Negative">AB Negative</option>
+              <option value="O-Positive">O Positive</option>
+              <option value="O-Negative">O Negative</option>
+              <option value="Unknown">Unknown</option>
+            </select>
+          </div>
+          <div>
+            <label for="status">Martial Status</label>
+            <select name="status" id="status" required>
+              <option value="" disabled selected>Select Martial Status</option>
+              <option value="single">Single</option>
+              <option value="married">Married</option>
+              <option value="divorced">Divorced</option>
+              <option value="widowed">Widowed</option>
+            </select>
+            </div>
+              <div><label for="tel">Phone Number</label> <input id="tel" name="tel" type="tel" placeholder="123-4567-8901" pattern="\d{3}-\d{4}-\d{4}" required aria-label="Enter your phone number in the format 123-4567-8901" /></div>
+              <div><label for="emergency-name">Emergency Contact Name</label><input type="text"  placeholder="e.g. John" name="emergency-name" id="emergency-name" required></div>
+              <div><label for="emergency-tel">Emergency Contact Number</label><input id="emergency-tel" name="emergency-tel" type="tel" placeholder="012-345-6789"pattern="\d{3}-\d{3}-\d{4}"required/></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <h3>Address Information</h3>
+        </legend>
+        <div class="account-details">
+          <div>
+            <label for="street-address">Street Address</label>
+            <textarea class="street-address" placeholder="Street Address" name="street-address" id="street-address" required="" style="width: 450px; height: 77px; resize: none;"></textarea>        
+          </div>
+            <div><label for="postal-code">Postal Code</label><input type="text" placeholder="Postal/Zip Code" name="postal-code" id="postal-code" required></div>
+          <div><label for="city">City</label><input type="text" placeholder="City" name="city" id="city" required></div>
+          <div>
+            <label for="country">Country</label>
+            <select name="country" id="country" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="Arganistan">Arganistan</option>
+              <option value="Åland Islands">Åland Islands</option>
+              <option value="Albania">Albania</option>
+              <option value="Algeria">Algeria</option>
+              <option value="American Samoa">American Samoa</option>
+              <option value="Andorra">Andorra</option>
+              <option value="Angola">Angola</option>
+              <option value="Anguilla">Anguilla</option>
+              <option value="Antarctica">Antarctica</option>
+              <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Armenia">Armenia</option>
+              <option value="Aruba">Aruba</option>
+              <option value="Australia">Australia</option>
+              <option value="Austria">Austria</option>
+              <option value="Azerbaijan">Azerbaijan</option>
+              <option value="Bahamas">Bahamas</option>
+              <option value="Bahrain">Bahrain</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Barbados">Barbados</option>
+              <option value="Belarus">Belarus</option>
+              <option value="Belgium">Belgium</option>
+              <option value="Belize">Belize</option>
+              <option value="Benin">Benin</option>
+              <option value="Bermuda">Bermuda</option>
+              <option value="Bhutan">Bhutan</option>
+              <option value="Bolivia">Bolivia</option>
+              <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+              <option value="Botswana">Botswana</option>
+              <option value="Bouvet Island">Bouvet Island</option>
+              <option value="Brazil">Brazil</option>
+              <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+              <option value="Brunei Darussalam">Brunei Darussalam</option>
+              <option value="Bulgaria">Bulgaria</option>
+              <option value="Burkina Faso">Burkina Faso</option>
+              <option value="Burundi">Burundi</option>
+              <option value="Cambodia">Cambodia</option>
+              <option value="Cameroon">Cameroon</option>
+              <option value="Canada">Canada</option>
+              <option value="Cape Verde">Cape Verde</option>
+              <option value="Cayman Islands">Cayman Islands</option>
+              <option value="Central African Republic">Central African Republic</option>
+              <option value="Chad">Chad</option>
+              <option value="Chile">Chile</option>
+              <option value="China">China</option>
+              <option value="Christmas Island">Christmas Island</option>
+              <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Comoros">Comoros</option>
+              <option value="Congo">Congo</option>
+              <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+              <option value="Cook Islands">Cook Islands</option>
+              <option value="Costa Rica">Costa Rica</option>
+              <option value="Cote D'ivoire">Cote D'ivoire</option>
+              <option value="Croatia">Croatia</option>
+              <option value="Cuba">Cuba</option>
+              <option value="Cyprus">Cyprus</option>
+              <option value="Czech Republic">Czech Republic</option>
+              <option value="Denmark">Denmark</option>
+              <option value="Djibouti">Djibouti</option>
+              <option value="Dominica">Dominica</option>
+              <option value="Dominican Republic">Dominican Republic</option>
+              <option value="Ecuador">Ecuador</option>
+              <option value="Egypt">Egypt</option>
+              <option value="El Salvador">El Salvador</option>
+              <option value="Equatorial Guinea">Equatorial Guinea</option>
+              <option value="Eritrea">Eritrea</option>
+              <option value="Estonia">Estonia</option>
+              <option value="Ethiopia">Ethiopia</option>
+              <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+              <option value="Faroe Islands">Faroe Islands</option>
+              <option value="Fiji">Fiji</option>
+              <option value="Finland">Finland</option>
+              <option value="France">France</option>
+              <option value="French Guiana">French Guiana</option>
+              <option value="French Polynesia">French Polynesia</option>
+              <option value="French Southern Territories">French Southern Territories</option>
+              <option value="Gabon">Gabon</option>
+              <option value="Gambia">Gambia</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Germany">Germany</option>
+              <option value="Ghana">Ghana</option>
+              <option value="Gibraltar">Gibraltar</option>
+              <option value="Greece">Greece</option>
+              <option value="Greenland">Greenland</option>
+              <option value="Grenada">Grenada</option>
+              <option value="Guadeloupe">Guadeloupe</option>
+              <option value="Guam">Guam</option>
+              <option value="Guatemala">Guatemala</option>
+              <option value="Guernsey">Guernsey</option>
+              <option value="Guinea">Guinea</option>
+              <option value="Guinea-bissau">Guinea-bissau</option>
+              <option value="Guyana">Guyana</option>
+              <option value="Haiti">Haiti</option>
+              <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+              <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+              <option value="Honduras">Honduras</option>
+              <option value="Hong Kong">Hong Kong</option>
+              <option value="Hungary">Hungary</option>
+              <option value="Iceland">Iceland</option>
+              <option value="India">India</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+              <option value="Iraq">Iraq</option>
+              <option value="Ireland">Ireland</option>
+              <option value="Isle of Man">Isle of Man</option>
+              <option value="Israel">Israel</option>
+              <option value="Italy">Italy</option>
+              <option value="Jamaica">Jamaica</option>
+              <option value="Japan">Japan</option>
+              <option value="Jersey">Jersey</option>
+              <option value="Jordan">Jordan</option>
+              <option value="Kazakhstan">Kazakhstan</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Kiribati">Kiribati</option>
+              <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+              <option value="Korea, Republic of">Korea, Republic of</option>
+              <option value="Kuwait">Kuwait</option>
+              <option value="Kyrgyzstan">Kyrgyzstan</option>
+              <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+              <option value="Latvia">Latvia</option>
+              <option value="Lebanon">Lebanon</option>
+              <option value="Lesotho">Lesotho</option>
+              <option value="Liberia">Liberia</option>
+              <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+              <option value="Liechtenstein">Liechtenstein</option>
+              <option value="Lithuania">Lithuania</option>
+              <option value="Luxembourg">Luxembourg</option>
+              <option value="Macao">Macao</option>
+              <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+              <option value="Madagascar">Madagascar</option>
+              <option value="Malawi">Malawi</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Maldives">Maldives</option>
+              <option value="Mali">Mali</option>
+              <option value="Malta">Malta</option>
+              <option value="Marshall Islands">Marshall Islands</option>
+              <option value="Martinique">Martinique</option>
+              <option value="Mauritania">Mauritania</option>
+              <option value="Mauritius">Mauritius</option>
+              <option value="Mayotte">Mayotte</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+              <option value="Moldova, Republic of">Moldova, Republic of</option>
+              <option value="Monaco">Monaco</option>
+              <option value="Mongolia">Mongolia</option>
+              <option value="Montenegro">Montenegro</option>
+              <option value="Montserrat">Montserrat</option>
+              <option value="Morocco">Morocco</option>
+              <option value="Mozambique">Mozambique</option>
+              <option value="Myanmar">Myanmar</option>
+              <option value="Namibia">Namibia</option>
+              <option value="Nauru">Nauru</option>
+              <option value="Nepal">Nepal</option>
+              <option value="Netherlands">Netherlands</option>
+              <option value="Netherlands Antilles">Netherlands Antilles</option>
+              <option value="New Caledonia">New Caledonia</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Nicaragua">Nicaragua</option>
+              <option value="Niger">Niger</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="Niue">Niue</option>
+              <option value="Norfolk Island">Norfolk Island</option>
+              <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+              <option value="Norway">Norway</option>
+              <option value="Oman">Oman</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Palau">Palau</option>
+              <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+              <option value="Panama">Panama</option>
+              <option value="Papua New Guinea">Papua New Guinea</option>
+              <option value="Paraguay">Paraguay</option>
+              <option value="Peru">Peru</option>
+              <option value="Philippines">Philippines</option>
+              <option value="Pitcairn">Pitcairn</option>
+              <option value="Poland">Poland</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Puerto Rico">Puerto Rico</option>
+              <option value="Qatar">Qatar</option>
+              <option value="Reunion">Reunion</option>
+              <option value="Romania">Romania</option>
+              <option value="Russian Federation">Russian Federation</option>
+              <option value="Rwanda">Rwanda</option>
+              <option value="Saint Helena">Saint Helena</option>
+              <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+              <option value="Saint Lucia">Saint Lucia</option>
+              <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+              <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+              <option value="Samoa">Samoa</option>
+              <option value="San Marino">San Marino</option>
+              <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+              <option value="Saudi Arabia">Saudi Arabia</option>
+              <option value="Senegal">Senegal</option>
+              <option value="Serbia">Serbia</option>
+              <option value="Seychelles">Seychelles</option>
+              <option value="Sierra Leone">Sierra Leone</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Slovakia">Slovakia</option>
+              <option value="Slovenia">Slovenia</option>
+              <option value="Solomon Islands">Solomon Islands</option>
+              <option value="Somalia">Somalia</option>
+              <option value="South Africa">South Africa</option>
+              <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+              <option value="Spain">Spain</option>
+              <option value="Sri Lanka">Sri Lanka</option>
+              <option value="Sudan">Sudan</option>
+              <option value="Suriname">Suriname</option>
+              <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+              <option value="Swaziland">Swaziland</option>
+              <option value="Sweden">Sweden</option>
+              <option value="Switzerland">Switzerland</option>
+              <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+              <option value="Taiwan">Taiwan</option>
+              <option value="Tajikistan">Tajikistan</option>
+              <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Timor-leste">Timor-leste</option>
+              <option value="Togo">Togo</option>
+              <option value="Tokelau">Tokelau</option>
+              <option value="Tonga">Tonga</option>
+              <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+              <option value="Tunisia">Tunisia</option>
+              <option value="Turkey">Turkey</option>
+              <option value="Turkmenistan">Turkmenistan</option>
+              <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+              <option value="Tuvalu">Tuvalu</option>
+              <option value="Uganda">Uganda</option>
+              <option value="Ukraine">Ukraine</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United States">United States</option>
+              <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+              <option value="Uruguay">Uruguay</option>
+              <option value="Uzbekistan">Uzbekistan</option>
+              <option value="Vanuatu">Vanuatu</option>
+              <option value="Venezuela">Venezuela</option>
+              <option value="Viet Nam">Viet Nam</option>
+              <option value="Virgin Islands, British">Virgin Islands, British</option>
+              <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+              <option value="Wallis and Futuna">Wallis and Futuna</option>
+              <option value="Western Sahara">Western Sahara</option>
+              <option value="Yemen">Yemen</option>
+              <option value="Zambia">Zambia</option>
+              <option value="Zimbabwe">Zimbabwe</option>
+            </select>
+          </div>
+          <div><label for="state">State</label><input type="text" placeholder="State/Province" name="state" id="state" required></div>
+
+       </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <h3>Medical History</h3>
+        </legend>
+        <div class="account-details">
+          <div>
+            <label for="cc">Chronic Condition</label>
+            <select name="cc" id="cc" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="Addictions – substance and alcohol, etc.">Addictions – substance and alcohol, etc.</option>
+              <option value="ADHD">ADHD</option>
+              <option value="Alcohol addiction">Alcohol addiction</option>
+              <option value="Allergic rhinitis/rhinitis/sinusitis/rhinosinusitis">Allergic rhinitis/rhinitis/sinusitis/rhinosinusitis</option>
+              <option value="Allergy/anaphylaxis">Allergy/anaphylaxis</option>
+              <option value="Amputations">Amputations</option>
+              <option value="Amnesia">Amnesia</option>
+              <option value="Anaemia">Anaemia</option>
+              <option value="Angina">Angina</option>
+              <option value="Angiooedema">Angiooedema</option>
+              <option value="Anklosing spondylitis (and other arthritic conditions)">Anklosing spondylitis (and other arthritic conditions)</option>
+              <option value="Antenatal screening for haemoglobinoapthies – sickle cell and thalassemia, Downs">Antenatal screening for haemoglobinoapthies – sickle cell and thalassemia, Downs</option>
+              <option value="Anxiety and stress disorders (including complex and post-traumatic stress disorders)">Anxiety and stress disorders (including complex and post-traumatic stress disorders)</option>
+              <option value="Aphasia">Aphasia</option>
+              <option value="Ataxia’s">Ataxia’s</option>
+              <option value="Autism">Autism</option>
+              <option value="Autoimmune disorders (e.g. lupus, Sjögrens syndrome)">Autoimmune disorders (e.g. lupus, Sjögrens syndrome)</option>
+              <option value="Blood disorders">Blood disorders</option>
+              <option value="Brain injuries (including stroke and TIAs)">Brain injuries (including stroke and TIAs)</option>
+              <option value="Bronchopulmonary dysplasia (chronic lung disease of infancy)">Bronchopulmonary dysplasia (chronic lung disease of infancy)</option>
+              <option value="Burn injuries">Burn injuries</option>
+              <option value="Cancer">Cancer</option>
+              <option value="Cardiac arrhythmias">Cardiac arrhythmias</option>
+              <option value="Cerebral palsy">Cerebral palsy</option>
+              <option value="Chronic fatigue syndrome/ME">Chronic fatigue syndrome/ME</option>
+              <option value="Chronic kidney disease">Chronic kidney disease</option>
+              <option value="Chronic obstructive pulmonary disease">Chronic obstructive pulmonary disease</option>
+              <option value="Chronic pain">Chronic pain</option>
+              <option value="Chronic sinusitis">Chronic sinusitis</option>
+              <option value="Coeliac disease">Coeliac disease</option>
+              <option value="Connective tissue diseases">Connective tissue diseases</option>
+              <option value="Congestive heart failure">Congestive heart failure</option>
+              <option value="Coronary heart disease">Coronary heart disease</option>
+              <option value="Crohn’s disease">Crohn’s disease</option>
+              <option value="Cystic Fibrosis">Cystic Fibrosis</option>
+              <option value="Dementia">Dementia</option>
+              <option value="Depression">Depression</option>
+              <option value="Digestive conditions, stomach ulcers, oesophagus, reflux">Digestive conditions, stomach ulcers, oesophagus, reflux</option>
+              <option value="Dizziness">Dizziness</option>
+              <option value="Diabetes: Type I">Diabetes: Type I</option>
+              <option value="Diabetes: Type II">Diabetes: Type II</option>
+              <option value="Dyslexia or dyspraxia">Dyslexia or dyspraxia</option>
+              <option value="Eating disorders (anorexia/bulimia)">Eating disorders (anorexia/bulimia)</option>
+              <option value="Eczema">Eczema</option>
+              <option value="Endocrine disorders (thyrotoxicosis, hypothyroidism, hypogonadism, Cushing syndrome, Addison’s disease)">Endocrine disorders (thyrotoxicosis, hypothyroidism, hypogonadism, Cushing syndrome, Addison’s disease)</option>
+              <option value="Epilepsy">Epilepsy</option>
+              <option value="Fibromyalgia/chronic widespread pain">Fibromyalgia/chronic widespread pain</option>
+              <option value="Gout">Gout</option>
+              <option value="Gynaecological problems, chronic pelvic pain">Gynaecological problems, chronic pelvic pain</option>
+              <option value="Haemophilia and other coagulation disorders">Haemophilia and other coagulation disorders</option>
+              <option value="Heart failure">Heart failure</option>
+              <option value="Hepatitis B">Hepatitis B</option>
+              <option value="Hepatitis C">Hepatitis C</option>
+              <option value="Hypertension">Hypertension</option>
+              <option value="Learning disabilities">Learning disabilities</option>
+              <option value="Lung fibrosis">Lung fibrosis</option>
+              <option value="Lupus">Lupus</option>
+              <option value="Malaria">Malaria</option>
+              <option value="Medically unexplained symptoms">Medically unexplained symptoms</option>
+              <option value="Migraine">Migraine</option>
+              <option value="Mood disorders (not only depression, but mania and bipolar disorders)">Mood disorders (not only depression, but mania and bipolar disorders)</option>
+              <option value="Motor neurone disease">Motor neurone disease</option>
+              <option value="Multimorbidity">Multimorbidity</option>
+              <option value="Multisystem autoimmune diseases (MSAIDs, including lupus)">Multisystem autoimmune diseases (MSAIDs, including lupus)</option>
+              <option value="Muscular dystrophy(ies)">Muscular dystrophy(ies)</option>
+              <option value="Neuralgias (including, head and back pain)">Neuralgias (including, head and back pain)</option>
+              <option value="Newborn screening programme diseases, including thyroid disease, hearing loss">Newborn screening programme diseases, including thyroid disease, hearing loss</option>
+              <option value="Obesity">Obesity</option>
+              <option value="Obstructive sleep apnoea">Obstructive sleep apnoea</option>
+              <option value="Occupational lung disease (various)">Occupational lung disease (various)</option>
+              <option value="Osteoarthritis">Osteoarthritis</option>
+              <option value="Osteoporosis">Osteoporosis</option>
+              <option value="Other slowly degenerative neurological conditions">Other slowly degenerative neurological conditions</option>
+              <option value="Peripheral vascular disease">Peripheral vascular disease</option>
+              <option value="Personality disorders">Personality disorders</option>
+              <option value="Phobias">Phobias</option>
+              <option value="Physical disabilities">Physical disabilities</option>
+              <option value="Polycystic ovary disease">Polycystic ovary disease</option>
+              <option value="Post-traumatic stress">Post-traumatic stress</option>
+              <option value="Progressive supranuclear palsy">Progressive supranuclear palsy</option>
+              <option value="Psoriasis">Psoriasis</option>
+              <option value="Rare disease, genetic disorders">Rare disease, genetic disorders</option>
+              <option value="Sarcoidosis">Sarcoidosis</option>
+              <option value="Sensory problems/disabilities (deafness/blindness)">Sensory problems/disabilities (deafness/blindness)</option>
+              <option value="Severe skin conditions">Severe skin conditions</option>
+              <option value="Sickle cell disease">Sickle cell disease</option>
+              <option value="Skin conditions">Skin conditions</option>
+              <option value="Sleep disorders">Sleep disorders</option>
+              <option value="Speech deficits">Speech deficits</option>
+              <option value="Spina bifida">Spina bifida</option>
+              <option value="Spinal injuries">Spinal injuries</option>
+              <option value="Stroke/transient ischaemic attacks">Stroke/transient ischaemic attacks</option>
+              <option value="Tuberculosis">Tuberculosis</option>
+              <option value="Urinary Incontinence">Urinary Incontinence</option>
+              <option value="Urticarial">Urticarial</option>
+            </select>
+            <span id="cc-error" class="error-message"></span>
+          </div>
+          <div>
+            <label for="surgeries">Surgeries</label>
+            <select name="surgeries" id="surgeries" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="Appendectomy">Appendectomy</option>
+              <option value="Ankle fusion">Ankle fusion</option>
+              <option value="Ankle ligament repair">Ankle ligament repair</option>
+              <option value="Ankle/foot surgery">Ankle/foot surgery</option>
+              <option value="Arthroscopy">Knee arthroscopy</option>
+              <option value="Blepharoplasty">Blepharoplasty (eyelid repair)</option>
+              <option value="Breast enhancement procedures">Cosmetic breast enhancement procedures</option>
+              <option value="Breast biopsies">Breast biopsies</option>
+              <option value="Bronchoscopy">Bronchoscopy</option>
+              <option value="Bunionectomy">Bunionectomy</option>
+              <option value="Carpal tunnel release">Nerve releases (carpal tunnel/cubital tunnel)</option>
+              <option value="Cesarean section">Cesarean section</option>
+              <option value="Chest procedures">Chest procedures</option>
+              <option value="Cystoscopy">Cystoscopy</option>
+              <option value="Diagnostic pelvic laparoscopy">Diagnostic pelvic laparoscopy</option>
+              <option value="Elbow/wrist/hand surgery">Elbow/wrist/hand surgery</option>
+              <option value="Gallbladder procedures">Gallbladder procedures</option>
+              <option value="Hammer toe">Hammer toe</option>
+              <option value="Hernia repair">Hernia repair</option>
+              <option value="Kidney stone extraction">Kidney stone extraction (with holmium laser or stone basket)</option>
+              <option value="Knee arthroscopy">Knee arthroscopy</option>
+              <option value="Laparoscopic assisted colon surgery">Laparoscopic assisted colon surgery</option>
+              <option value="Laparoscopic assisted radical prostatectomy with lymph node dissection">Laparoscopic assisted radical prostatectomy with lymph node dissection</option>
+              <option value="Laparoscopic procedures">Laparoscopic procedures</option>
+              <option value="Lateral epicodylitis debridement/repair">Lateral epicodylitis debridement/repair</option>
+              <option value="Lipossuction">Liposuction</option>
+              <option value="Lung procedures">Lung procedures</option>
+              <option value="Microwave endometrial ablation">Microwave endometrial ablation</option>
+              <option value="Mastectomy with reconstruction">Mastectomy with reconstruction</option>
+              <option value="Nephrectomy">Nephrectomy (kidney removal)</option>
+              <option value="Nissen fundoplication">Nissen fundoplication</option>
+              <option value="Prostatectomy">Prostatectomy</option>
+              <option value="Radical retropubic (open) prostatectomy with lymph node dissection">Radical retropubic (open) prostatectomy with lymph node dissection</option>
+              <option value="Rotator cuff repair/shoulder surgery">Rotator cuff repair/shoulder surgery</option>
+              <option value="Tendon/ligament repair">Tendon/ligament repair</option>
+              <option value="Thyroidectomy">Thyroidectomy</option>
+              <option value="Tonsillectomy and adenoidectomy">Tonsillectomy and adenoidectomy</option>
+              <option value="Total abdominal hysterectomy">Total abdominal hysterectomy</option>
+              <option value="Total laparoscopic hysterectomy">Total laparoscopic hysterectomy</option>
+              <option value="Trigger finger release">Trigger finger release</option>
+              <option value="Transurethral resection of the prostate (TURP)">Transurethral resection of the prostate (TURP)</option>
+              <option value="Tubal ligation">Tubal ligation</option>
+              <option value="Tubes in the eardrums (Myringotomy)">Tubes in the eardrums (Myringotomy)</option>
+              <option value="Ureteroscopy">Ureteroscopy</option>
+              <option value="Urticarial">Urticarial</option>
+              <option value="Vaginal hysterectomy">Vaginal hysterectomy</option>
+              <option value="Vein stripping">Vein stripping</option>
+            </select>
+          </div>
+       </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <h3>Immunization (Optional)</h3>
+        </legend>
+        <div id="immunization-fields">
+        <div class="immunization-fields">
+          <div class="account-details">
+              <div>
+                <label for="vaccine">Vaccine</label>
+                <input type="text" placeholder="Vaccine Name" name="vaccine" id="vaccine" >
+                <span id="vaccine-error" class="error-message"></span>
+              </div>
+              <div>
+                <label for="date-administered">Date Administered</label>
+                <input type="tel" placeholder="eg. 2020" name="date-administered" id="date-administered" >
+              </div>
+            </div>
+          </div>
+       </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <h3>Medication</h3>
+        </legend>
+        <div id="medications-fields">
+          <div class="medications-fields">
+          <div class="account-details2">
+            <div>
+              <label style="padding: 0%;padding-bottom: 4%;">Medication</label>              
+              <input type="text" placeholder="" name="medication" id="medication" required>
+            </div>
+            <div>
+              <label style="padding: 0%;padding-bottom: 4%;">Dosage</label>
+              <input type="text" placeholder="eg.10mg" name="dosage" id="dosage" required>
+            </div>
+            <div>
+              <label style="padding: 0%;padding-bottom: 4%;">Frequency</label>
+              <input type="text" placeholder="e.g Twice daily" name="frequency" id="frequency" required>
+            </div>
+            </div>
+          </div>
+       </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <h3>Health Metrics</h3>
+        </legend>
+        <div class="account-details">
+          <div>
+            <label for="blood-pressure">Blood Pressure</label>
+            <select name="blood-pressure" id="blood-pressure" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="unknown">Unknown</option>
+              <option value="120/80 mm Hg">120/80 mm Hg</option>
+              <option value="121/80 mm Hg">121/80 mm Hg</option>
+              <option value="122/80 mm Hg">122/80 mm Hg</option>
+              <option value="123/81 mm Hg">123/81 mm Hg</option>
+              <option value="124/81 mm Hg">124/81 mm Hg</option>
+              <option value="125/82 mm Hg">125/82 mm Hg</option>
+              <option value="126/82 mm Hg">126/82 mm Hg</option>
+              <option value="127/83 mm Hg">127/83 mm Hg</option>
+              <option value="128/83 mm Hg">128/83 mm Hg</option>
+              <option value="129/84 mm Hg">129/84 mm Hg</option>
+              <option value="130/85 mm Hg">130/85 mm Hg</option>
+              <option value="131/85 mm Hg">131/85 mm Hg</option>
+              <option value="132/86 mm Hg">132/86 mm Hg</option>
+              <option value="133/87 mm Hg">133/87 mm Hg</option>
+              <option value="134/87 mm Hg">134/87 mm Hg</option>
+              <option value="135/88 mm Hg">135/88 mm Hg</option>
+              <option value="136/88 mm Hg">136/88 mm Hg</option>
+              <option value="137/89 mm Hg">137/89 mm Hg</option>
+              <option value="138/89 mm Hg">138/89 mm Hg</option>
+              <option value="139/90 mm Hg">139/90 mm Hg</option>
+              <option value="140/90 mm Hg">140/90 mm Hg</option>
+              <option value="141/91 mm Hg">141/91 mm Hg</option>
+              <option value="142/92 mm Hg">142/92 mm Hg</option>
+              <option value="143/92 mm Hg">143/92 mm Hg</option>
+              <option value="144/93 mm Hg">144/93 mm Hg</option>
+              <option value="145/94 mm Hg">145/94 mm Hg</option>
+              <option value="146/95 mm Hg">146/95 mm Hg</option>
+              <option value="147/96 mm Hg">147/96 mm Hg</option>
+              <option value="148/96 mm Hg">148/96 mm Hg</option>
+              <option value="149/97 mm Hg">149/97 mm Hg</option>
+              <option value="150/98 mm Hg">150/98 mm Hg</option>
+              <option value="151/99 mm Hg">151/99 mm Hg</option>
+              <option value="152/100 mm Hg">152/100 mm Hg</option>
+              <option value="153/100 mm Hg">153/100 mm Hg</option>
+              <option value="154/101 mm Hg">154/101 mm Hg</option>
+              <option value="155/102 mm Hg">155/102 mm Hg</option>
+              <option value="156/103 mm Hg">156/103 mm Hg</option>
+              <option value="157/104 mm Hg">157/104 mm Hg</option>
+              <option value="158/105 mm Hg">158/105 mm Hg</option>
+              <option value="159/106 mm Hg">159/106 mm Hg</option>
+              <option value="160/107 mm Hg">160/107 mm Hg</option>
+              <option value="161/108 mm Hg">161/108 mm Hg</option>
+              <option value="162/109 mm Hg">162/109 mm Hg</option>
+              <option value="163/110 mm Hg">163/110 mm Hg</option>
+              <option value="164/111 mm Hg">164/111 mm Hg</option>
+              <option value="165/112 mm Hg">165/112 mm Hg</option>
+              <option value="166/113 mm Hg">166/113 mm Hg</option>
+              <option value="167/114 mm Hg">167/114 mm Hg</option>
+              <option value="168/115 mm Hg">168/115 mm Hg</option>
+              <option value="169/116 mm Hg">169/116 mm Hg</option>
+              <option value="170/117 mm Hg">170/117 mm Hg</option>
+              <option value="171/118 mm Hg">171/118 mm Hg</option>
+              <option value="172/119 mm Hg">172/119 mm Hg</option>
+              <option value="180/120 mm Hg">180/120 mm Hg</option>
+            </select>
+          </div>
+          <div>
+            <label for="weight">Weight</label>
+            <select name="weight" id="weight" onchange="calculateBMI()" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="30">30 kg</option>
+              <option value="31">31 kg</option>
+              <option value="32">32 kg</option>
+              <option value="33">33 kg</option>
+              <option value="34">34 kg</option>
+              <option value="35">35 kg</option>
+              <option value="36">36 kg</option>
+              <option value="37">37 kg</option>
+              <option value="38">38 kg</option>
+              <option value="39">39 kg</option>
+              <option value="40">40 kg</option>
+              <option value="41">41 kg</option>
+              <option value="42">42 kg</option>
+              <option value="43">43 kg</option>
+              <option value="44">44 kg</option>
+              <option value="45">45 kg</option>
+              <option value="46">46 kg</option>
+              <option value="47">47 kg</option>
+              <option value="48">48 kg</option>
+              <option value="49">49 kg</option>
+              <option value="50">50 kg</option>
+              <option value="51">51 kg</option>
+              <option value="52">52 kg</option>
+              <option value="53">53 kg</option>
+              <option value="54">54 kg</option>
+              <option value="55">55 kg</option>
+              <option value="56">56 kg</option>
+              <option value="57">57 kg</option>
+              <option value="58">58 kg</option>
+              <option value="59">59 kg</option>
+              <option value="60">60 kg</option>
+              <option value="61">61 kg</option>
+              <option value="62">62 kg</option>
+              <option value="63">63 kg</option>
+              <option value="64">64 kg</option>
+              <option value="65">65 kg</option>
+              <option value="66">66 kg</option>
+              <option value="67">67 kg</option>
+              <option value="68">68 kg</option>
+              <option value="69">69 kg</option>
+              <option value="70">70 kg</option>
+              <option value="71">71 kg</option>
+              <option value="72">72 kg</option>
+              <option value="73">73 kg</option>
+              <option value="74">74 kg</option>
+              <option value="75">75 kg</option>
+              <option value="76">76 kg</option>
+              <option value="77">77 kg</option>
+              <option value="78">78 kg</option>
+              <option value="79">79 kg</option>
+              <option value="80">80 kg</option>
+              <option value="81">81 kg</option>
+              <option value="82">82 kg</option>
+              <option value="83">83 kg</option>
+              <option value="84">84 kg</option>
+              <option value="85">85 kg</option>
+              <option value="86">86 kg</option>
+              <option value="87">87 kg</option>
+              <option value="88">88 kg</option>
+              <option value="89">89 kg</option>
+              <option value="90">90 kg</option>
+              <option value="91">91 kg</option>
+              <option value="92">92 kg</option>
+              <option value="93">93 kg</option>
+              <option value="94">94 kg</option>
+              <option value="95">95 kg</option>
+              <option value="96">96 kg</option>
+              <option value="97">97 kg</option>
+              <option value="98">98 kg</option>
+              <option value="99">99 kg</option>
+              <option value="100">100 kg</option>
+              <option value="101">101 kg</option>
+              <option value="102">102 kg</option>
+              <option value="103">103 kg</option>
+              <option value="104">104 kg</option>
+              <option value="105">105 kg</option>
+              <option value="106">106 kg</option>
+              <option value="107">107 kg</option>
+              <option value="108">108 kg</option>
+              <option value="109">109 kg</option>
+              <option value="110">110 kg</option>
+              <option value="111">111 kg</option>
+              <option value="112">112 kg</option>
+              <option value="113">113 kg</option>
+              <option value="114">114 kg</option>
+              <option value="115">115 kg</option>
+              <option value="116">116 kg</option>
+              <option value="117">117 kg</option>
+              <option value="118">118 kg</option>
+              <option value="119">119 kg</option>
+              <option value="120">120 kg</option>
+              <option value="121">121 kg</option>
+              <option value="122">122 kg</option>
+              <option value="123">123 kg</option>
+              <option value="124">124 kg</option>
+              <option value="125">125 kg</option>
+              <option value="126">126 kg</option>
+              <option value="127">127 kg</option>
+              <option value="128">128 kg</option>
+              <option value="129">129 kg</option>
+              <option value="130">130 kg</option>
+              <option value="131">131 kg</option>
+              <option value="132">132 kg</option>
+              <option value="133">133 kg</option>
+              <option value="134">134 kg</option>
+              <option value="135">135 kg</option>
+              <option value="136">136 kg</option>
+              <option value="137">137 kg</option>
+              <option value="138">138 kg</option>
+              <option value="139">139 kg</option>
+              <option value="140">140 kg</option>
+              <option value="141">141 kg</option>
+              <option value="142">142 kg</option>
+              <option value="143">143 kg</option>
+              <option value="144">144 kg</option>
+              <option value="145">145 kg</option>
+              <option value="146">146 kg</option>
+              <option value="147">147 kg</option>
+              <option value="148">148 kg</option>
+              <option value="149">149 kg</option>
+              <option value="150">150 kg</option>
+              <option value="151">151 kg</option>
+              <option value="152">152 kg</option>
+              <option value="153">153 kg</option>
+              <option value="154">154 kg</option>
+              <option value="155">155 kg</option>
+              <option value="156">156 kg</option>
+              <option value="157">157 kg</option>
+              <option value="158">158 kg</option>
+              <option value="159">159 kg</option>
+              <option value="160">160 kg</option>
+              <option value="161">161 kg</option>
+              <option value="162">162 kg</option>
+              <option value="163">163 kg</option>
+              <option value="164">164 kg</option>
+              <option value="165">165 kg</option>
+              <option value="166">166 kg</option>
+              <option value="167">167 kg</option>
+              <option value="168">168 kg</option>
+              <option value="169">169 kg</option>
+              <option value="170">170 kg</option>
+              <option value="171">171 kg</option>
+              <option value="172">172 kg</option>
+              <option value="173">173 kg</option>
+              <option value="174">174 kg</option>
+              <option value="175">175 kg</option>
+              <option value="176">176 kg</option>
+              <option value="177">177 kg</option>
+              <option value="178">178 kg</option>
+              <option value="179">179 kg</option>
+              <option value="180">180 kg</option>
+              <option value="181">181 kg</option>
+              <option value="182">182 kg</option>
+              <option value="183">183 kg</option>
+              <option value="184">184 kg</option>
+              <option value="185">185 kg</option>
+              <option value="186">186 kg</option>
+              <option value="187">187 kg</option>
+              <option value="188">188 kg</option>
+              <option value="189">189 kg</option>
+              <option value="190">190 kg</option>
+              <option value="191">191 kg</option>
+              <option value="192">192 kg</option>
+              <option value="193">193 kg</option>
+              <option value="194">194 kg</option>
+              <option value="195">195 kg</option>
+              <option value="196">196 kg</option>
+              <option value="197">197 kg</option>
+              <option value="198">198 kg</option>
+              <option value="199">199 kg</option>
+              <option value="200">200 kg</option>
+            </select>
+          </div>
+          <div>
+            <label for="heart-rate">Heart Rate</label>
+            <select name="heart-rate" id="heart-rate" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="Unknown">Unknown</option>
+              <option value="90 BPM">90 BPM</option>
+              <option value="91 BPM">91 BPM</option>
+              <option value="92 BPM">92 BPM</option>
+              <option value="93 BPM">93 BPM</option>
+              <option value="94 BPM">94 BPM</option>
+              <option value="95 BPM">95 BPM</option>
+              <option value="96 BPM">96 BPM</option>
+              <option value="97 BPM">97 BPM</option>
+              <option value="98 BPM">98 BPM</option>
+              <option value="99 BPM">99 BPM</option>
+              <option value="100 BPM">100 BPM</option>
+              <option value="101 BPM">101 BPM</option>
+              <option value="102 BPM">102 BPM</option>
+              <option value="103 BPM">103 BPM</option>
+              <option value="104 BPM">104 BPM</option>
+              <option value="105 BPM">105 BPM</option>
+              <option value="106 BPM">106 BPM</option>
+              <option value="107 BPM">107 BPM</option>
+              <option value="108 BPM">108 BPM</option>
+              <option value="109 BPM">109 BPM</option>
+              <option value="110 BPM">110 BPM</option>
+              <option value="111 BPM">111 BPM</option>
+              <option value="112 BPM">112 BPM</option>
+              <option value="113 BPM">113 BPM</option>
+              <option value="114 BPM">114 BPM</option>
+              <option value="115 BPM">115 BPM</option>
+              <option value="116 BPM">116 BPM</option>
+              <option value="117 BPM">117 BPM</option>
+              <option value="118 BPM">118 BPM</option>
+              <option value="119 BPM">119 BPM</option>
+              <option value="120 BPM">120 BPM</option>
+              <option value="121 BPM">121 BPM</option>
+              <option value="122 BPM">122 BPM</option>
+              <option value="123 BPM">123 BPM</option>
+              <option value="124 BPM">124 BPM</option>
+              <option value="125 BPM">125 BPM</option>
+              <option value="126 BPM">126 BPM</option>
+              <option value="127 BPM">127 BPM</option>
+              <option value="128 BPM">128 BPM</option>
+              <option value="129 BPM">129 BPM</option>
+              <option value="130 BPM">130 BPM</option>
+              <option value="131 BPM">131 BPM</option>
+              <option value="132 BPM">132 BPM</option>
+              <option value="133 BPM">133 BPM</option>
+              <option value="134 BPM">134 BPM</option>
+              <option value="135 BPM">135 BPM</option>
+              <option value="136 BPM">136 BPM</option>
+              <option value="137 BPM">137 BPM</option>
+              <option value="138 BPM">138 BPM</option>
+              <option value="139 BPM">139 BPM</option>
+              <option value="140 BPM">140 BPM</option>
+              <option value="141 BPM">141 BPM</option>
+              <option value="142 BPM">142 BPM</option>
+              <option value="143 BPM">143 BPM</option>
+              <option value="144 BPM">144 BPM</option>
+              <option value="145 BPM">145 BPM</option>
+              <option value="146 BPM">146 BPM</option>
+              <option value="147 BPM">147 BPM</option>
+              <option value="148 BPM">148 BPM</option>
+              <option value="149 BPM">149 BPM</option>
+              <option value="150 BPM">150 BPM</option>
+              <option value="151 BPM">151 BPM</option>
+              <option value="152 BPM">152 BPM</option>
+              <option value="153 BPM">153 BPM</option>
+              <option value="154 BPM">154 BPM</option>
+              <option value="155 BPM">155 BPM</option>
+              <option value="156 BPM">156 BPM</option>
+              <option value="157 BPM">157 BPM</option>
+              <option value="158 BPM">158 BPM</option>
+              <option value="159 BPM">159 BPM</option>
+              <option value="160 BPM">160 BPM</option>
+              <option value="161 BPM">161 BPM</option>
+              <option value="162 BPM">162 BPM</option>
+              <option value="163 BPM">163 BPM</option>
+              <option value="164 BPM">164 BPM</option>
+              <option value="165 BPM">165 BPM</option>
+              <option value="166 BPM">166 BPM</option>
+              <option value="167 BPM">167 BPM</option>
+              <option value="168 BPM">168 BPM</option>
+              <option value="169 BPM">169 BPM</option>
+              <option value="170 BPM">170 BPM</option>
+              <option value="171 BPM">171 BPM</option>
+              <option value="172 BPM">172 BPM</option>
+              <option value="173 BPM">173 BPM</option>
+              <option value="174 BPM">174 BPM</option>
+              <option value="175 BPM">175 BPM</option>
+              <option value="176 BPM">176 BPM</option>
+              <option value="177 BPM">177 BPM</option>
+              <option value="178 BPM">178 BPM</option>
+              <option value="179 BPM">179 BPM</option>
+              <option value="180 BPM">180 BPM</option>
+              <option value="181 BPM">181 BPM</option>
+              <option value="182 BPM">182 BPM</option>
+              <option value="183 BPM">183 BPM</option>
+              <option value="184 BPM">184 BPM</option>
+              <option value="185 BPM">185 BPM</option>
+              <option value="186 BPM">186 BPM</option>
+              <option value="187 BPM">187 BPM</option>
+              <option value="188 BPM">188 BPM</option>
+              <option value="189 BPM">189 BPM</option>
+              <option value="190 BPM">190 BPM</option>
+              <option value="191 BPM">191 BPM</option>
+              <option value="192 BPM">192 BPM</option>
+              <option value="193 BPM">193 BPM</option>
+              <option value="194 BPM">194 BPM</option>
+              <option value="195 BPM">195 BPM</option>
+              <option value="196 BPM">196 BPM</option>
+              <option value="197 BPM">197 BPM</option>
+              <option value="198 BPM">198 BPM</option>
+              <option value="199 BPM">199 BPM</option>
+              <option value="200 BPM">200 BPM</option>
+            </select>
+          </div>
+          <div>
+            <label for="bmiResult">Your BMI: </label>
+            <input name="bmiResult" type="text" id="bmiResult" value="0" readonly>
+          </div>
+          <div>
+            <label for="height">Height</label>
+            <select name="height" id="height" onchange="calculateBMI()" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="100">100 cm</option>
+              <option value="101">101 cm</option>
+              <option value="102">102 cm</option>
+              <option value="103">103 cm</option>
+              <option value="104">104 cm</option>
+              <option value="105">105 cm</option>
+              <option value="106">106 cm</option>
+              <option value="107">107 cm</option>
+              <option value="108">108 cm</option>
+              <option value="109">109 cm</option>
+              <option value="110">110 cm</option>
+              <option value="111">111 cm</option>
+              <option value="112">112 cm</option>
+              <option value="113">113 cm</option>
+              <option value="114">114 cm</option>
+              <option value="115">115 cm</option>
+              <option value="116">116 cm</option>
+              <option value="117">117 cm</option>
+              <option value="118">118 cm</option>
+              <option value="119">119 cm</option>
+              <option value="120">120 cm</option>
+              <option value="121">121 cm</option>
+              <option value="122">122 cm</option>
+              <option value="123">123 cm</option>
+              <option value="124">124 cm</option>
+              <option value="125">125 cm</option>
+              <option value="126">126 cm</option>
+              <option value="127">127 cm</option>
+              <option value="128">128 cm</option>
+              <option value="129">129 cm</option>
+              <option value="130">130 cm</option>
+              <option value="131">131 cm</option>
+              <option value="132">132 cm</option>
+              <option value="133">133 cm</option>
+              <option value="134">134 cm</option>
+              <option value="135">135 cm</option>
+              <option value="136">136 cm</option>
+              <option value="137">137 cm</option>
+              <option value="138">138 cm</option>
+              <option value="139">139 cm</option>
+              <option value="140">140 cm</option>
+              <option value="141">141 cm</option>
+              <option value="142">142 cm</option>
+              <option value="143">143 cm</option>
+              <option value="144">144 cm</option>
+              <option value="145">145 cm</option>
+              <option value="146">146 cm</option>
+              <option value="147">147 cm</option>
+              <option value="148">148 cm</option>
+              <option value="149">149 cm</option>
+              <option value="150">150 cm</option>
+              <option value="151">151 cm</option>
+              <option value="152">152 cm</option>
+              <option value="153">153 cm</option>
+              <option value="154">154 cm</option>
+              <option value="155">155 cm</option>
+              <option value="156">156 cm</option>
+              <option value="157">157 cm</option>
+              <option value="158">158 cm</option>
+              <option value="159">159 cm</option>
+              <option value="160">160 cm</option>
+              <option value="161">161 cm</option>
+              <option value="162">162 cm</option>
+              <option value="163">163 cm</option>
+              <option value="164">164 cm</option>
+              <option value="165">165 cm</option>
+              <option value="166">166 cm</option>
+              <option value="167">167 cm</option>
+              <option value="168">168 cm</option>
+              <option value="169">169 cm</option>
+              <option value="170">170 cm</option>
+              <option value="171">171 cm</option>
+              <option value="172">172 cm</option>
+              <option value="173">173 cm</option>
+              <option value="174">174 cm</option>
+              <option value="175">175 cm</option>
+              <option value="176">176 cm</option>
+              <option value="177">177 cm</option>
+              <option value="178">178 cm</option>
+              <option value="179">179 cm</option>
+              <option value="180">180 cm</option>
+              <option value="181">181 cm</option>
+              <option value="182">182 cm</option>
+              <option value="183">183 cm</option>
+              <option value="184">184 cm</option>
+              <option value="185">185 cm</option>
+              <option value="186">186 cm</option>
+              <option value="187">187 cm</option>
+              <option value="188">188 cm</option>
+              <option value="189">189 cm</option>
+              <option value="190">190 cm</option>
+              <option value="191">191 cm</option>
+              <option value="192">192 cm</option>
+              <option value="193">193 cm</option>
+              <option value="194">194 cm</option>
+              <option value="195">195 cm</option>
+              <option value="196">196 cm</option>
+              <option value="197">197 cm</option>
+              <option value="198">198 cm</option>
+              <option value="199">199 cm</option>
+              <option value="200">200 cm</option>
+            </select>
+            <span id="height-error" class="error-message"></span>
+          </div>
+       </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <h3>Medical Test & Results</h3>
+        </legend>
+        <div id="test-fields">
+          <div class="test-fields">
+          <div class="account-details2">
+            <div>
+              <label for="test" style="padding: 0%;padding-bottom: 4%;">Medical Test</label>
+              <select style="width: 100%;" name="test" id="test" required>
+                <option value="" disabled selected>Please select</option>
+                <option value="blood-test">Blood Test</option>
+                <option value="urine-test">Urine Test</option>
+                <option value="x-ray">X-ray</option>
+                <option value="mri">MRI</option>
+                <option value="ct-scan">CT Scan</option>
+                <option value="ecg">ECG</option>
+                <option value="ultrasound">Ultrasound</option>
+                <option value="blood-pressure">Blood Pressure Test</option>
+                <option value="glucose-test">Glucose Test</option>
+                <option value="cholesterol-test">Cholesterol Test</option>
+                <option value="liver-function-test">Liver Function Test</option>
+                <option value="kidney-function-test">Kidney Function Test</option>
+                <option value="pregnancy-test">Pregnancy Test</option>
+                <option value="mammogram">Mammogram</option>
+                <option value="pap-smear">Pap Smear</option>
+                <option value="prostate-test">Prostate Test</option>
+                <option value="hiv-test">HIV Test</option>
+                <option value="allergy-test">Allergy Test</option>
+                <option value="skin-biopsy">Skin Biopsy</option>
+                <option value="bone-density-test">Bone Density Test</option>
+              </select>
+            </div>
+            <div style="text-align: right;">
+              <label for="result" style="display: block; margin-bottom: 0%; width: 38px;margin-bottom: 2px;">Result</label>
+              <textarea class="result" placeholder="" name="result" id="result" required="" style="width: 307px; height: 77px; resize: none;"></textarea>
+            </div>
+            <div><label form="dob2" style="padding: 0%;padding-bottom: 4%;" for="dob2">Date Of Birth</label><input   type="date" name="dob2" id="dob2" min="1940-01-01" max="2025-12-31" required></div>
+            </div>
+          </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <h3>Lifestyle & Habits</h3>
+        </legend>
+        <div class="account-details">
+          <div>
+            <label>What type of diet do you follow?</label>
+            <select name="diet" id="diet" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="Balanced">Balanced</option>
+              <option value="High Sugar">High Sugar</option>
+              <option value="Unhealthy">Unhealthy</option>
+              </select>         
+           </div>
+          <div>
+            <label>How often do you consume alcohol? </label>
+              <select name="alcohol" id="alcohol" required>
+                <option value="" disabled selected>Please select</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Occasionally">Occasionally</option>
+                <option value="Never ">Never consumed alcohol</option>
+              </select>
+          </div>
+          <div>
+            <label>How often do you engage in physical activity?</label>
+            <select name="exercise" id="exercise" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="Daily">Daily</option>
+              <option value="Weekly">Weekly</option>
+              <option value="Never">Never</option>
+            </select>
+          </div>
+          <div>
+            <label>How many hours of sleep do you get on average each night?</label>
+            <select name="sleep" id="sleep" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+          <div>
+            <label>Do you use tobacco? If yes, what is the frequency?</label>
+            <select id="tobaccoUse"  name="tobaccoUse" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="Daily">Daily</option>
+              <option value="Occasionally">Occasionally</option>
+              <option value="Never">Never Smoked</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <h3>Physicians and Healthcare Providers</h3>
+        </legend>
+        <div id="facility-fields">
+          <div class="facility-fields">
+          <div class="account-details2">
+            <div>
+              <label style="padding: 0%;padding-bottom: 4%;">Name</label>
+              <input type="text" placeholder="" name="provider-name" id="provider-name" required>
+            </div>
+            <div>
+              <label style="padding: 0%;padding-bottom: 4%;">Contact Info</label>
+              <input type="text" placeholder="" name="provider-tel" id="provider-tel" required>
+            </div>
+            <div>
+              <label style="padding: 0%;padding-bottom: 4%;">Facility Name</label>
+              <input type="text" placeholder="" name="facility-name" id="facility-name" required>
+            </div>
+            <div style="text-align: left;">
+              <label for="facility-address" style="display: block; margin-bottom: 0%; width: 99px;margin-bottom: 2px;">Facility Address</label>
+              <textarea class="facility-address" placeholder="facility-address" name="facility-address" id="facility-address" required="" style="width: 307px; height: 77px; resize: none;"></textarea>
+            </div>
+            </div>
+          </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <h3>Name your record title</h3>
+        </legend>
+          <div class="account-details2">
+            <div>
+              <label for="title" style="padding: 0%;padding-bottom: 4%;">Record Title</label>
+              <input type="text" placeholder="" name="title" id="title" required>
+          </div>
+       </div>
+      </fieldset>
+
+      
+
+
+
+<button type="submit" href="/">Submit</button>
+</form>
+</div> 
+
+
+<script>
+      // Add immunization field
+    document.getElementById('add-immunization-field-btn').addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const immunizationFieldsContainer = document.getElementById('immunization-fields');
+      const newField = document.createElement('div');
+      newField.classList.add('immunization-fields');
+      newField.innerHTML = `
+    <div class="account-details">
+        <div>
+            <label for="vaccine">Vaccine</label>
+            <input type="text" placeholder="Vaccine Name" name="vaccine[]" required>
+            <span id="vaccine-error" class="error-message"></span>
+        </div>
+        <div>
+            <label for="date-administered">Date Administered</label>
+            <input type="tel" placeholder="eg. 2020" name="date-administered[]" required>
+            <span id="date-administered-error" class="error-message"></span>
+        </div>
+    </div>
+`;
+      immunizationFieldsContainer.appendChild(newField);
+
+      // Show the delete button
+      const deleteButton = document.getElementById('delete-immunization-field-btn');
+      deleteButton.style.display = 'inline-block';
+    });
+
+    // Delete last immunization field
+    document.getElementById('delete-immunization-field-btn').addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const immunizationFieldsContainer = document.getElementById('immunization-fields');
+      const lastField = immunizationFieldsContainer.lastElementChild;
+
+      if (lastField && immunizationFieldsContainer.children.length > 1) {
+        immunizationFieldsContainer.removeChild(lastField);
+      }
+
+      // Hide the delete button if only one field remains
+      if (immunizationFieldsContainer.children.length === 1) {
+        this.style.display = 'none';
+      }
+    });
+
+      // Add medication field
+      document.getElementById('add-medication-field-btn').addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const medicationFieldsContainer = document.getElementById('medications-fields');
+      const newField = document.createElement('div');
+      newField.classList.add('medications-fields');
+      newField.innerHTML = `
+         <div class="account-details2">
+            <div>
+              
+              <input style = "width: 254px; margin-top: 10px;" type="text" placeholder="" name="medication[]" id="medication" required>
+            </div>
+            <div>
+              <input style="width: 175%; margin-top: 10px;margin-left: -47px;" type="text" placeholder="eg.10mg" name="dosage[]" id="dosage" required>
+            </div>
+            <div>
+              <input style="width: 248px; margin-top: 10px;margin-right: -14px;margin-left: 20px;" type="text" placeholder="e.g Twice daily" name="frequency[]" id="frequency" required>            </div>
+            </div>
+          </div>
+`;
+      medicationFieldsContainer.appendChild(newField);
+
+      // Show the delete button
+      const deleteButton = document.getElementById('delete-medication-field-btn');
+      deleteButton.style.display = 'inline-block';
+    });
+
+    // Delete last medication field
+    document.getElementById('delete-medication-field-btn').addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const medicationFieldsContainer = document.getElementById('medications-fields');
+      const lastField = medicationFieldsContainer.lastElementChild;
+
+      if (lastField && medicationFieldsContainer.children.length > 1) {
+        medicationFieldsContainer.removeChild(lastField);
+      }
+
+      // Hide the delete button if only one field remains
+      if (medicationFieldsContainer.children.length === 1) {
+        this.style.display = 'none';
+      }
+    });
+
+// Medical Test and Result section
+document.getElementById('add-test-field-btn').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent page reload
+
+  const testFieldsContainer = document.getElementById('test-fields');
+  const newField = document.createElement('div');
+  newField.classList.add('test-fields');
+  newField.innerHTML = `
+        <div id="test-fields">
+          <div class="test-fields">
+          <div class="account-details2">
+            <div>
+              <label for="test" style="padding: 0%;padding-bottom: 4%; opacity: 0.0;">Medical Test</label>
+              <select style="width: 100%;" name="test[]" id="test" required>
+                <option value="" disabled selected>Please select</option>
+                <option value="blood-test">Blood Test</option>
+                <option value="urine-test">Urine Test</option>
+                <option value="x-ray">X-ray</option>
+                <option value="mri">MRI</option>
+                <option value="ct-scan">CT Scan</option>
+                <option value="ecg">ECG</option>
+                <option value="ultrasound">Ultrasound</option>
+                <option value="blood-pressure">Blood Pressure Test</option>
+                <option value="glucose-test">Glucose Test</option>
+                <option value="cholesterol-test">Cholesterol Test</option>
+                <option value="liver-function-test">Liver Function Test</option>
+                <option value="kidney-function-test">Kidney Function Test</option>
+                <option value="pregnancy-test">Pregnancy Test</option>
+                <option value="mammogram">Mammogram</option>
+                <option value="pap-smear">Pap Smear</option>
+                <option value="prostate-test">Prostate Test</option>
+                <option value="hiv-test">HIV Test</option>
+                <option value="allergy-test">Allergy Test</option>
+                <option value="skin-biopsy">Skin Biopsy</option>
+                <option value="bone-density-test">Bone Density Test</option>
+              </select>
+            </div>
+            <div>
+              <label  style="padding: 0%;padding-bottom: 4%; opacity: 0.0;">Result</label>
+              <input   type="text" placeholder="" name="result[]" id="result" required>
+            </div>
+            <div><label  style="padding: 0%;padding-bottom: 4%; opacity: 0.0;" for="dob">Date Of Birth</label>
+              <input type="date" name="dob2[]" id="dob2" min="1940-01-01" max="2025-12-31" required="" style="margin-left: 0px;margin-right: -5px;">
+              </div>
+            </div>
+          </div>
+       </div>
+  `;
+  testFieldsContainer.appendChild(newField);
+
+    // Show the delete button
+    const deleteButton = document.getElementById('delete-test-field-btn');
+    deleteButton.style.display = 'inline-block';
+  });
+  
+  // Delete last immunization field
+  document.getElementById('delete-test-field-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+  
+    const testFieldsContainer = document.getElementById('test-fields');
+    const lastField = testFieldsContainer.lastElementChild;
+  
+    if (lastField && testFieldsContainer.children.length > 1) {
+      testFieldsContainer.removeChild(lastField);
+    }
+  
+    // Hide the delete button if only one field remains
+    if (testFieldsContainer.children.length === 1) {
+      this.style.display = 'none';
+    }
+  });
+
+        // Add immunization field
+        document.getElementById('add-facility-field-btn').addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const facilityFieldsContainer = document.getElementById('facility-fields');
+      const newField = document.createElement('div');
+      newField.classList.add('facility-fields');
+      newField.innerHTML = `
+         <div class="account-details2">
+            <div>
+              <label style="padding: 0%;padding-bottom: 4%; opacity: 0.0;">Provider Type</label>
+              <input type="text" placeholder="eg.Cardiologist" name="provider-type[]" id="provider-type" required>
+            </div>
+            <div>
+              <label style="padding: 0%;padding-bottom: 4%; opacity: 0.0;">Name</label>
+              <input type="text" placeholder="" name="provider-name[]" id="provider-name" required>
+            </div>
+            <div>
+              <label style="padding: 0%;padding-bottom: 4%;opacity: 0.0;">Contact Info</label>
+              <input type="text" placeholder="" name="provider-tel[]" id="provider-tel" required>
+            </div>
+            <div>
+              <label style="padding: 0%;padding-bottom: 4%;opacity: 0.0;">Facility Name</label>
+              <input type="text" placeholder="" name="facility-name[]" id="facility-name" required>
+            </div>
+            <div style="text-align: left;">
+              <label for="facility-address" style="display: block; margin-bottom: 0%; width: 99px;margin-bottom: 2px; opacity: 0.0;">Facility Address</label>
+              <textarea class="facility-address" placeholder="facility-address" name="facility-address[]" id="facility-address" required="" style="width: 307px; height: 77px; resize: none;"></textarea>
+            </div>
+            </div>
+`;
+      facilityFieldsContainer.appendChild(newField);
+
+      // Show the delete button
+      const deleteButton = document.getElementById('delete-facility-field-btn');
+      deleteButton.style.display = 'inline-block';
+    });
+
+    // Delete last immunization field
+    document.getElementById('delete-facility-field-btn').addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const facilityFieldsContainer = document.getElementById('facility-fields');
+      const lastField = facilityFieldsContainer.lastElementChild;
+
+      if (lastField && facilityFieldsContainer.children.length > 1) {
+        facilityFieldsContainer.removeChild(lastField);
+      }
+
+      // Hide the delete button if only one field remains
+      if (facilityFieldsContainer.children.length === 1) {
+        this.style.display = 'none';
+      }
+    });
+
+
+        // Function to calculate BMI
+    function calculateBMI() {
+      var weight = document.getElementById('weight').value;
+      var height = document.getElementById('height').value;
+
+      if (weight && height) {
+          // Convert height from cm to meters
+          height = height / 100;
+          
+          // Calculate BMI
+          var bmi = weight / (height * height);
+          
+          // Display the BMI result in the text input
+          document.getElementById('bmiResult').value = bmi.toFixed(2); // Rounded to 2 decimal places
+      } else {
+          document.getElementById('bmiResult').value = '0';
+      }
+    }
+
+
+    function toggleYearField() {
+      var tobaccoUse = document.getElementById("tobaccoUse").value;
+      var yearQuitDiv = document.getElementById("yearQuitDiv");
+      var yearQuitInput = document.getElementById("yearQuit");
+
+      if (tobaccoUse === "quit") {
+        yearQuitDiv.style.display = "block"; // Show the year field
+        yearQuitInput.removeAttribute("disabled"); // Enable the input
+        yearQuitInput.setAttribute("required", "required"); // Make it required
+      } else {
+        yearQuitDiv.style.display = "none"; // Hide the year field
+        yearQuitInput.setAttribute("disabled", "disabled"); // Disable the input
+        yearQuitInput.removeAttribute("required"); // Remove required
+      }
+  }
+
+
+  function updateTobaccoUseField() {
+    const tobaccoUse = document.getElementById('tobaccoUse');
+    const yearQuit = document.getElementById('yearQuit');
+
+    if (tobaccoUse.value === 'quit' && yearQuit.value) {
+        tobaccoUse.value = `Quit on ${yearQuit.value}`;
+    }
+}
+</script>
+</body>
+</html>
+
+
+

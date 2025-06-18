@@ -1,0 +1,36 @@
+
+.dashboard-btn {
+  background-color: transparent; /* Fully transparent background */
+  color: black; /* Text color */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Light border for contrast */
+  padding: 10px 20px; /* Padding */
+  margin-left: 10px; /* Space between buttons */
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center text */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.dashboard-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light white background on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+
+
+.col-auto {
+  color: black;
+}
+
+.row-header-title{
+  font-size: 24px;
+}
+
+/* style.css */
+.manage-record-section {
+  padding-top: 12px;
+  padding-bottom: 1px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+}
+

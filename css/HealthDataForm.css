@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800&display=swap');
+:root {
+  --main-color : #00c6a9;
+  --secondary-color: #78d7c9ed;
+  --lighter-color: #e0e0e7;
+  --light-color: #b0b0c0;
+  --dark-color: #52505e;
+
+  --font-smaller: 14px;
+  --font-bigger: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--dark-color);
+  background: var(--dark-color);
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 0.5em;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5em;
+  border: 8px solid var(--lighter-color);
+  border-radius: 15px;
+  background-color: #faf9ff;
+}
+
+/* ==> Progress */
+.form-box .progress {
+  position: relative;
+  padding: 1em;
+}
+
+.logo {
+  font-size: 1.75em;
+  font-weight: 800;
+  color: var(--dark-color);
+  padding: 40px 60px;
+  text-align: center;
+}
+
+.logo span {
+  color: var(--main-color);
+}
+
+.progress ul.progress-steps {
+  display: flex;
+  flex-direction: row;
+  /*! align-items: center; */
+  justify-content: center;
+  gap: 2em;
+}
+
+.progress ul.progress-steps li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.6em;
+}
+
+.progress ul.progress-steps li > span {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  font-size: var(--font-smaller);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1em;
+  border-radius: 50%;
+  background-color: var(--lighter-color);
+  z-index: 1;
+}
+
+
+
+.progress ul.progress-steps li p span {
+  font-size: var(--font-smaller);
+  color: var(--light-color);
+  display: none;
+}
+
+.progress ul li p {
+  position:absolute;
+  top: -2em;
+  font-size: 12px;
+}
+
+.form-box form, .fields-container {
+  width: 100%;
+  padding: 3em 1em;
+  background-color: white;
+  border-radius: 30px 30px 15px 15px;
+}
+
+
+form > div {
+  max-width: 400px;
+  /*! margin: 0 auto; */
+}
+
+form > div p {
+  color: var(--light-color);
+  margin-bottom: 2em;
+}
+
+form > div > div:not(.checkbox) {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+form :where(input, select) {
+  height: 40px;
+  padding: 0 1em;
+  border-radius: 7px;
+  outline-color: var(--secondary-color);
+  border: 1px solid var(--lighter-color);
+  background-color: transparent;
+}
+
+form label {
+  font-size: var(--font-smaller);
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+form .grouping{
+  display: flex;
+}
+
+form .grouping input{
+  max-width: 70px;
+  text-align: center;
+  margin-right: 1em;
+}
+
+form .checkbox input {
+  height: auto;
+}
+
+
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+form > div.active {
+  display: block;
+}
+
+form > div .bg-svg {
+  width: 60px;
+  height: 50px;
+}
+
+form > .form-one .bg-svg {
+  background: url(/svg/personal.svg);
+  background-repeat: no-repeat;
+  padding: 30px;
+}
+
+form > .form-two .bg-svg {
+  background: url(/svg/address.svg);
+  background-repeat: no-repeat;
+
+  padding: 0px;
+
+  
+}
+
+form > .form-three .bg-svg {
+  background: url(/svg/medical_history.svg);
+  background-repeat: no-repeat;
+}
+
+form > .form-four .bg-svg {
+  background: url(/svg/syringe.svg);
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+
+form > .form-five .bg-svg {
+  background: url(/svg/Pill.svg);
+  background-repeat: no-repeat;
+  padding: 30px;
+}
+
+form > .form-six .bg-svg {
+  background: url(/svg/metrics.svg);
+  background-repeat: no-repeat;
+  padding: 35px;
+}
+
+form > .form-seven .bg-svg {
+  background: url(/svg/test\ tube.svg);
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+form > .form-eight .bg-svg {
+  background: url(/svg/fitness1.svg);
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+
+form > .form-nine .bg-svg {
+  background : url(/svg/hospital.svg);
+  background-repeat: no-repeat;
+  padding: 34px;
+}
+
+form > .form-ten .bg-svg {
+  background: url(/svg/title.svg);
+  background-repeat: no-repeat;
+  padding: 30px;
+}
+
+
+
+
+
+/* ==> Button */
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.btn-group [class*="btn-"] {
+  background-color: var(--main-color);
+  color:white;
+  padding: 0em 2.5em;
+  border: 4px solid var(--secondary-color);
+  border-radius: 30px;
+  cursor: pointer;
+  -webkit-transition: background-color .3s, border-color  .3s ease-out;
+  transition: background-color .3s, border-color  .3s ease-out;
+}
+
+.btn-group [class*="btn-"]:disabled {
+  background-color: var(--light-color);
+  border-color: var(--lighter-color);
+  cursor: text;
+}
+
+.btn-group [class*="btn-"]:hover:not(:disabled) {
+  background-color: var(--dark-color);
+  border-color: var(--light-color);
+}
+
+
+
+.btn-group .btn-submit,
+.form-ten.active ~ .btn-group .btn-next {
+  display: none;
+}
+
+.form-ten.active ~ .btn-group .btn-submit {
+  display: block;
+}
+
+.form-ten.active ~ .btn-group {
+  justify-content: space-between;
+}
+
+::placeholder {
+  color: var(--light-color)
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+  .form-box {
+    flex-direction: row;
+  }
+
+  .form-box .progress {
+    flex: 1 0 35%;
+    min-width: 300px;
+    padding: 3em;
+  }
+  .logo {
+    margin: -48px -12px 28px;
+  }
+  .progress ul.progress-steps {
+    flex-direction: column;
+    gap: 0;
+  }
+  .progress ul.progress-steps li:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    width: 2px;
+    height: 65px;
+    background-color: var(--lighter-color);
+  }
+  .form-box form {
+    padding: 3em;
+    border-radius: 0 15px 15px 0;
+  }
+  .progress ul li p {
+    position: relative;
+    top: auto;
+    font-size: inherit;
+  }
+  .progress ul.progress-steps li p span {
+    display: block;
+  }
+}
+
+
+/* Apply input styles for field-set or fields-container */
+.fields-container, .field-set {
+  width: 100%;
+  padding: 1em;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 2em;
+}
+
+/* Input Styling Inside field-set or fields-container */
+.fields-container input,
+.field-set input,
+.fields-container select,
+.field-set select {
+  height: 40px;
+  padding: 0 1em;
+  border-radius: 7px;
+  outline-color: var(--secondary-color);
+  border: 1px solid var(--lighter-color);
+  background-color: transparent;
+  font-size: var(--font-smaller);
+  color: var(--dark-color);
+}
+
+/* Label Styling Inside field-set or fields-container */
+.fields-container label,
+.field-set label {
+  font-size: var(--font-smaller);
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+/* Add margin and padding for form fields */
+.fields-container > div,
+.field-set > div {
+  margin-bottom: 1.5em;
+}
+
+/* Placeholder Styling */
+.fields-container ::placeholder,
+.field-set ::placeholder {
+  color: var(--light-color);
+}
+
+/* Adjust layout for responsive design */
+@media screen and (min-width: 768px) {
+  .fields-container,
+  .field-set {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .fields-container > div,
+  .field-set > div {
+    flex: 1 0 45%;
+  }
+}
+
+/* Input and select field styles */
+input,
+select {
+  width: 100%;
+  height: 40px;
+  padding: 0 1em;
+  border: 1px solid var(--lighter-color);
+  border-radius: 7px;
+  background-color: var(--background-light);
+  font-size: var(--font-smaller);
+  color: var(--dark-color);
+  outline: none;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input.error,
+select.error {
+  border-color: red;
+  background-color: var(--background-error-light);
+}
+
+/* Labels */
+label {
+  font-size: var(--font-smaller);
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 0.5em;
+  display: block;
+}
+
+/* Placeholder styling */
+::placeholder {
+  color: var(--light-color);
+  opacity: 0.7;
+}
+
+/* Add this to your CSS */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.error {
+  animation: shake 0.5s;
+  border-color: red; /* Optional: Highlight with red border */
+}
+
+
+
+
+/* Responsive Design for Immunization Field */
+@media screen and (min-width: 768px) {
+  .immunization-fields {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    padding-bottom: 30px;
+  }
+
+  .immunization-fields > div {
+    flex: 1 0 45%;
+  }
+
+  .medications-fields {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    padding-bottom: 1em; /* Added padding bottom */
+  }
+
+  .medications-fields > div {
+    flex: 1 0 45%;
+  }
+
+  .test-fields {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    padding-bottom: 1em; /* Added padding bottom */
+  }
+
+  .test-fields > div {
+    flex: 1 0 45%;
+  }
+  
+
+
+  .provider-fields {
+    display: flex;
+    flex-wrap: wrap; /* Allow inputs to wrap to the next line if needed */
+    gap: 1em; /* Adjust gap between inputs */
+    padding-bottom: 1em; /* Add padding at the bottom */
+    width: 647px;
+  }
+
+  .provider-fields > div {
+    flex: 1 0 45%;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+  }
+
+  
+}
+
+
+/* Button styling */
+#add-field-btn,
+#add-immunization-field-btn,
+#add-test-btn,
+#add-provider-btn{
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue background color */
+  color: white;
+  font-size: 13px; /* Adjust the font size as needed */
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Hover effect */
+#add-field-btn:hover,
+#add-immunization-field-btn:hover,
+#add-test-btn:hover,
+#add-provider-btn:hover{
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Focus effect */
+#add-field-btn:focus,
+#add-immunization-field-btn:focus,
+#add-test-btn:focus,
+#add-provider-btn:focus{
+  outline: none;
+  box-shadow: 0 0 4px #0056b3; /* Focus shadow with a darker blue */
+}
+
+/* Disabled state */
+#add-field-btn:disabled,
+#add-immunization-field-btn:disabled,
+#add-test-btn:disabled,
+#add-provider-btn:disabled{
+  background-color: #b0c4de; /* Lighter blue when disabled */
+  cursor: not-allowed;
+}
+
+/* Delete Button styling */
+#delete-provider-btn,
+#delete-immunization-field-btn,
+#delete-field-btn,
+#delete-test-btn {
+  padding: 10px 20px;
+  background-color: #ff0000; /* Red background color */
+  color: white;
+  font-size: 13px; /* Adjust the font size as needed */
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Hover effect */
+#delete-provider-btn:hover,
+#delete-immunization-field-btn:hover,
+#delete-field-btn:hover,
+#delete-test-btn:hover {
+  background-color: #b30000; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Focus effect */
+#delete-provider-btn:focus,
+#delete-immunization-field-btn:focus,
+#delete-field-btn:focus,
+#delete-test-btn:focus {
+  outline: none;
+  box-shadow: 0 0 4px #b30000; /* Focus shadow with a darker red */
+}
+
+/* Disabled state */
+#delete-provider-btn:disabled,
+#delete-immunization-field-btn:disabled,
+#delete-field-btn:disabled,
+#delete-test-btn:disabled  {
+  background-color: #b0c4de; /* Lighter color when disabled */
+  cursor: not-allowed;
+}
+
+
+.street-addresss,
+.diet,
+.exercise {
+  width: 650px;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="css/appoinment.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>Appointment Form </title>
+  </head>
+<body>
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <header style="font-size: 24px; font-weight: bold;">Appointment Form</header>
+        <a href="appoinment_dashboard.php" class="close-btn" style="font-size: 35px; font-weight: normal; text-decoration: none; color: #333; transition: transform 0.2s ease;">
+          &times;
+        </a>
+      </div>
+      
+      <style>
+        .close-btn:hover {
+          transform: scale(1.3);
+          color: red; /* Optional: make it red on hover */
+        }
+      </style>
+              <form action="process-appoinment-form.php" method="post" id="appoinment-form">
+          <div class="form first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Full Name</label>
+                            <input name="fullname" type="text" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Date of Birth</label>
+                            <input name="dob" type="date" placeholder="Enter birth date" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input name="email" type="text" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input name="tel" type="tel" placeholder="Enter mobile number" placeholder="123-456-8901" pattern="\d{3}-\d{3}-\d{4}" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <select name="gender" required>
+                                <option disabled selected>Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>Address</label>
+                            <input name="address" type="text" placeholder="Enter your full Address" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="details appointment">
+                    <span class="title">Doctor's Appointment Details</span>
+                    <div class="fields">
+                      <div class="input-field">
+                        <label>Select Hospital</label>
+                        <select name="hospital" id="hospital" required>
+                          <option disabled selected>Select a hospital</option>
+                          <option value="City General Hospital">City General Hospital</option>
+                          <option value="Green Valley Clinic">Green Valley Clinic</option>
+                          <option value="Sunrise Health Center">Sunrise Health Center</option>
+                        </select>
+                      </div>
+          
+                      <div class="input-field">
+                        <label>Preferred Doctor</label>
+                        <select name="doctor" id="doctor" required>
+                          <option disabled selected>Select a doctor</option>
+                        </select>
+                      </div>
+          
+                      <div class="input-field">
+                        <label>Speciality</label>
+                        <select name="speciality" id="speciality">
+                          <option disabled selected>Select speciality</option>
+                        </select>
+                      </div>
+          
+                      <div class="input-field">
+                        <label>Medical Concern</label>
+                        <input name="medical_concern" type="text" placeholder="Briefly describe your concern" required />
+                      </div>
+          
+                      <div class="input-field">
+                        <label>Preferred Date</label>
+                        <input name="preferred_date" type="date" id="preferredDate" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Preferred Time</label>
+                        <select name="preferred_time" id="preferredTime" required>
+                            <option disabled selected>Select preferred time</option>
+                        </select>
+                    </div>
+                    
+                      
+          
+                    <button class="submit">
+                      <span class="btnText">Submit</span>
+                      <i class="uil uil-navigator"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          
+            <script>
+const hospitalSelect = document.getElementById("hospital");
+const doctorSelect = document.getElementById("doctor");
+const specialitySelect = document.getElementById("speciality");
+
+const doctorData = {
+  "City General Hospital": [
+    { name: "Dr. Smith", speciality: "Cardiology" },
+    { name: "Dr. Lee", speciality: "Dermatology" }
+  ],
+  "Green Valley Clinic": [
+    { name: "Dr. Johnson", speciality: "Pediatrics" },
+    { name: "Dr. Kim", speciality: "Neurology" }
+  ],
+  "Sunrise Health Center": [
+    { name: "Dr. Patel", speciality: "Orthopedics" },
+    { name: "Dr. Wang", speciality: "ENT" }
+  ]
+};
+
+hospitalSelect.addEventListener("change", function () {
+  const selectedHospital = this.value;
+  const doctors = doctorData[selectedHospital] || [];
+
+  doctorSelect.innerHTML = `<option disabled selected>Select a doctor</option>`;
+  doctors.forEach((doc) => {
+    const option = document.createElement("option");
+    option.value = doc.name;  // Store the doctor's name as the value
+    option.textContent = doc.name;
+    doctorSelect.appendChild(option);
+  });
+
+  specialitySelect.innerHTML = `<option disabled selected>Select speciality</option>`;
+});
+
+doctorSelect.addEventListener("change", function () {
+  const selectedHospital = hospitalSelect.value;
+  const selectedDoctorName = this.value;  // Get the doctor's name from the value
+  const selectedDoctor = doctorData[selectedHospital].find(doc => doc.name === selectedDoctorName);  // Find the doctor by name
+
+  // Set the speciality based on the selected doctor
+  specialitySelect.innerHTML = `<option selected>${selectedDoctor ? selectedDoctor.speciality : ''}</option>`;
+});
+
+
+              
+                const preferredDate = document.getElementById("preferredDate");
+                const preferredTime = document.getElementById("preferredTime");
+
+                const timeSlots = {
+                    weekday: ["09:00 AM", "10:30 AM", "01:00 PM", "03:30 PM"],
+                    weekend: ["10:00 AM", "12:00 PM", "02:00 PM"]
+                };
+
+                preferredDate.addEventListener("change", function () {
+                    const selectedDate = new Date(this.value);
+                    const day = selectedDate.getDay(); // 0 = Sunday, 6 = Saturday
+
+                    // Clear previous options
+                    preferredTime.innerHTML = '<option disabled selected>Select preferred time</option>';
+
+                    const slots = (day === 0 || day === 6) ? timeSlots.weekend : timeSlots.weekday;
+
+                    slots.forEach(time => {
+                    const option = document.createElement("option");
+                    option.value = time;
+                    option.textContent = time;
+                    preferredTime.appendChild(option);
+                    });
+                });
+              </script>
+              
+          </body>
+          </html>

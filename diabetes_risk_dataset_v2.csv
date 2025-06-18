@@ -1,0 +1,201 @@
+Diet,Exercise,Tobacco_Use,Alcohol_Consumption,Sleep_Pattern,Diabetes_Risk
+Balanced,Never,Daily,Weekly,11,High
+Unhealthy,Daily,Occasionally,Occasionally,7,Medium
+Balanced,Weekly,Never Smoked,Occasionally,8,Low
+High Sugar,Daily,Never Smoked,Occasionally,8,Low
+Unhealthy,Never,Occasionally,Weekly,10,High
+Balanced,Never,Occasionally,Occasionally,12,High
+Balanced,Daily,Occasionally,Weekly,10,Medium
+Balanced,Never,Daily,Weekly,9,High
+Unhealthy,Weekly,Never Smoked,Never consumed alcohol,11,Medium
+Unhealthy,Daily,Daily,Never consumed alcohol,6,Medium
+Unhealthy,Weekly,Daily,Weekly,11,High
+Unhealthy,Never,Occasionally,Weekly,6,High
+High Sugar,Never,Daily,Weekly,9,High
+High Sugar,Weekly,Never Smoked,Never consumed alcohol,10,Medium
+Unhealthy,Daily,Occasionally,Occasionally,10,Medium
+Unhealthy,Daily,Occasionally,Weekly,9,Medium
+Balanced,Weekly,Occasionally,Occasionally,12,Medium
+Unhealthy,Daily,Never Smoked,Occasionally,8,Medium
+High Sugar,Never,Never Smoked,Weekly,9,High
+Balanced,Never,Never Smoked,Never consumed alcohol,6,Medium
+High Sugar,Daily,Occasionally,Occasionally,7,Medium
+High Sugar,Weekly,Occasionally,Occasionally,9,Medium
+Unhealthy,Never,Never Smoked,Occasionally,10,High
+Unhealthy,Never,Never Smoked,Weekly,12,High
+Balanced,Never,Daily,Never consumed alcohol,9,Medium
+Unhealthy,Daily,Daily,Weekly,7,High
+Unhealthy,Never,Occasionally,Occasionally,12,High
+Balanced,Daily,Never Smoked,Never consumed alcohol,6,Low
+Balanced,Never,Daily,Occasionally,9,Medium
+Balanced,Daily,Occasionally,Occasionally,12,Medium
+High Sugar,Weekly,Daily,Occasionally,12,High
+High Sugar,Daily,Occasionally,Occasionally,10,Medium
+High Sugar,Weekly,Never Smoked,Never consumed alcohol,11,Medium
+High Sugar,Daily,Never Smoked,Weekly,10,Medium
+Unhealthy,Daily,Never Smoked,Weekly,10,Medium
+Balanced,Never,Daily,Occasionally,12,High
+Balanced,Weekly,Never Smoked,Weekly,6,Medium
+Balanced,Daily,Daily,Never consumed alcohol,6,Low
+Unhealthy,Never,Daily,Never consumed alcohol,12,High
+High Sugar,Daily,Occasionally,Occasionally,6,Medium
+Balanced,Never,Daily,Never consumed alcohol,12,High
+Unhealthy,Weekly,Occasionally,Never consumed alcohol,11,High
+High Sugar,Never,Occasionally,Occasionally,5,High
+High Sugar,Daily,Daily,Never consumed alcohol,5,Medium
+High Sugar,Daily,Never Smoked,Never consumed alcohol,12,Medium
+Unhealthy,Never,Occasionally,Occasionally,5,High
+Balanced,Never,Daily,Weekly,10,High
+High Sugar,Never,Never Smoked,Weekly,10,High
+Balanced,Daily,Never Smoked,Never consumed alcohol,9,Low
+Unhealthy,Weekly,Daily,Never consumed alcohol,12,High
+High Sugar,Weekly,Never Smoked,Occasionally,9,Medium
+Balanced,Never,Never Smoked,Never consumed alcohol,9,Low
+Balanced,Never,Never Smoked,Occasionally,6,Medium
+High Sugar,Weekly,Occasionally,Never consumed alcohol,12,Medium
+High Sugar,Weekly,Occasionally,Weekly,10,High
+High Sugar,Daily,Occasionally,Never consumed alcohol,8,Low
+High Sugar,Daily,Occasionally,Weekly,11,High
+High Sugar,Weekly,Occasionally,Occasionally,8,Medium
+High Sugar,Never,Never Smoked,Weekly,5,High
+Balanced,Never,Occasionally,Never consumed alcohol,5,Medium
+Balanced,Never,Never Smoked,Weekly,11,High
+Unhealthy,Daily,Never Smoked,Weekly,11,High
+Balanced,Never,Daily,Occasionally,10,High
+Balanced,Daily,Daily,Never consumed alcohol,10,Low
+High Sugar,Daily,Occasionally,Occasionally,5,Medium
+High Sugar,Weekly,Never Smoked,Never consumed alcohol,12,Medium
+High Sugar,Never,Occasionally,Occasionally,5,High
+Unhealthy,Weekly,Daily,Weekly,12,High
+Balanced,Weekly,Never Smoked,Never consumed alcohol,11,Low
+High Sugar,Weekly,Daily,Never consumed alcohol,6,Medium
+Unhealthy,Weekly,Daily,Occasionally,11,High
+Balanced,Daily,Never Smoked,Weekly,9,Low
+Unhealthy,Weekly,Never Smoked,Weekly,5,High
+Balanced,Daily,Never Smoked,Never consumed alcohol,11,Low
+Unhealthy,Daily,Daily,Never consumed alcohol,10,Medium
+High Sugar,Weekly,Never Smoked,Occasionally,9,Medium
+High Sugar,Weekly,Never Smoked,Never consumed alcohol,11,Medium
+High Sugar,Daily,Occasionally,Occasionally,9,Medium
+Balanced,Daily,Occasionally,Weekly,9,Low
+High Sugar,Weekly,Never Smoked,Occasionally,8,Medium
+High Sugar,Weekly,Never Smoked,Weekly,5,High
+High Sugar,Never,Occasionally,Occasionally,6,High
+Balanced,Never,Occasionally,Occasionally,10,Medium
+Unhealthy,Weekly,Occasionally,Occasionally,7,Medium
+Unhealthy,Weekly,Never Smoked,Never consumed alcohol,7,Medium
+High Sugar,Never,Occasionally,Occasionally,9,High
+High Sugar,Never,Occasionally,Occasionally,10,High
+Unhealthy,Never,Daily,Occasionally,10,High
+High Sugar,Daily,Occasionally,Weekly,12,High
+High Sugar,Weekly,Daily,Occasionally,7,Medium
+High Sugar,Never,Daily,Occasionally,9,High
+High Sugar,Weekly,Daily,Occasionally,8,Medium
+High Sugar,Daily,Occasionally,Weekly,6,Medium
+Unhealthy,Weekly,Never Smoked,Weekly,10,High
+Unhealthy,Never,Never Smoked,Weekly,9,High
+Balanced,Weekly,Occasionally,Never consumed alcohol,11,Medium
+Unhealthy,Daily,Daily,Weekly,12,High
+High Sugar,Never,Never Smoked,Never consumed alcohol,7,Medium
+Unhealthy,Weekly,Never Smoked,Never consumed alcohol,6,Medium
+High Sugar,Weekly,Never Smoked,Weekly,5,High
+Balanced,Never,Occasionally,Never consumed alcohol,11,Medium
+Unhealthy,Never,Occasionally,Weekly,6,High
+High Sugar,Weekly,Never Smoked,Weekly,8,Medium
+Balanced,Weekly,Occasionally,Weekly,6,Medium
+Balanced,Never,Occasionally,Weekly,9,Medium
+Balanced,Never,Occasionally,Never consumed alcohol,9,Medium
+High Sugar,Daily,Never Smoked,Occasionally,11,Medium
+High Sugar,Never,Never Smoked,Never consumed alcohol,12,High
+Balanced,Daily,Never Smoked,Never consumed alcohol,11,Low
+High Sugar,Never,Never Smoked,Never consumed alcohol,10,Medium
+Unhealthy,Weekly,Never Smoked,Weekly,8,Medium
+Unhealthy,Daily,Never Smoked,Weekly,5,High
+Balanced,Never,Never Smoked,Weekly,11,High
+High Sugar,Daily,Never Smoked,Never consumed alcohol,12,Medium
+High Sugar,Daily,Never Smoked,Weekly,10,Medium
+Balanced,Weekly,Daily,Never consumed alcohol,12,Medium
+High Sugar,Daily,Daily,Weekly,10,High
+High Sugar,Never,Never Smoked,Occasionally,11,High
+Unhealthy,Never,Daily,Never consumed alcohol,7,High
+High Sugar,Never,Occasionally,Never consumed alcohol,11,High
+High Sugar,Never,Occasionally,Never consumed alcohol,9,Medium
+High Sugar,Weekly,Never Smoked,Occasionally,6,Medium
+Unhealthy,Daily,Daily,Weekly,10,High
+Balanced,Daily,Occasionally,Never consumed alcohol,11,Low
+Unhealthy,Never,Never Smoked,Occasionally,12,High
+Unhealthy,Daily,Daily,Weekly,8,High
+Balanced,Weekly,Daily,Weekly,10,Medium
+Unhealthy,Daily,Daily,Never consumed alcohol,12,High
+Unhealthy,Daily,Occasionally,Occasionally,10,Medium
+High Sugar,Never,Never Smoked,Occasionally,9,Medium
+High Sugar,Daily,Occasionally,Occasionally,10,Medium
+High Sugar,Never,Daily,Weekly,6,High
+High Sugar,Weekly,Never Smoked,Occasionally,7,Medium
+Unhealthy,Weekly,Daily,Weekly,11,High
+Unhealthy,Never,Daily,Weekly,10,High
+Balanced,Weekly,Never Smoked,Weekly,7,Low
+Unhealthy,Daily,Daily,Never consumed alcohol,11,High
+Unhealthy,Weekly,Daily,Weekly,12,High
+Unhealthy,Never,Occasionally,Weekly,11,High
+High Sugar,Daily,Daily,Occasionally,6,Medium
+Balanced,Never,Never Smoked,Occasionally,6,Medium
+Unhealthy,Never,Never Smoked,Occasionally,9,High
+Balanced,Daily,Daily,Occasionally,6,Medium
+Unhealthy,Weekly,Never Smoked,Occasionally,12,High
+Balanced,Never,Occasionally,Weekly,9,Medium
+High Sugar,Weekly,Occasionally,Weekly,8,Medium
+Unhealthy,Daily,Never Smoked,Occasionally,8,Medium
+Balanced,Never,Never Smoked,Weekly,11,High
+High Sugar,Daily,Daily,Weekly,10,High
+Balanced,Never,Never Smoked,Weekly,6,Medium
+High Sugar,Never,Never Smoked,Never consumed alcohol,7,Medium
+High Sugar,Never,Daily,Weekly,5,High
+High Sugar,Never,Occasionally,Never,8,Medium
+Balanced,Daily,Never Smoked,Occasionally,10,Low
+Unhealthy,Daily,Occasionally,Weekly,12,High
+Balanced,Weekly,Never Smoked,Weekly,10,Medium
+Unhealthy,Never,Daily,Weekly,7,High
+High Sugar,Daily,Never Smoked,Never consumed alcohol,9,Low
+High Sugar,Never,Daily,Occasionally,10,High
+Unhealthy,Daily,Daily,Occasionally,6,High
+Unhealthy,Never,Daily,Weekly,10,High
+High Sugar,Never,Never Smoked,Weekly,9,High
+Unhealthy,Never,Daily,Never consumed alcohol,6,High
+High Sugar,Weekly,Occasionally,Never consumed alcohol,6,Medium
+High Sugar,Never,Never Smoked,Never consumed alcohol,12,High
+Unhealthy,Weekly,Occasionally,Never consumed alcohol,6,Medium
+Unhealthy,Never,Occasionally,Never consumed alcohol,12,High
+Unhealthy,Daily,Occasionally,Occasionally,12,High
+Unhealthy,Never,Occasionally,Weekly,12,High
+High Sugar,Daily,Occasionally,Never consumed alcohol,6,Medium
+High Sugar,Daily,Never Smoked,Never consumed alcohol,9,Low
+Unhealthy,Daily,Never Smoked,Never consumed alcohol,8,Low
+Balanced,Daily,Occasionally,Occasionally,5,Medium
+High Sugar,Daily,Never Smoked,Never consumed alcohol,5,Medium
+Balanced,Weekly,Occasionally,Occasionally,9,Low
+Unhealthy,Weekly,Never Smoked,Occasionally,9,Medium
+Balanced,Never,Daily,Weekly,8,High
+Unhealthy,Weekly,Never Smoked,Weekly,12,High
+Unhealthy,Weekly,Occasionally,Weekly,10,High
+Unhealthy,Weekly,Never Smoked,Occasionally,5,High
+Balanced,Never,Occasionally,Never consumed alcohol,12,Medium
+High Sugar,Never,Never Smoked,Never consumed alcohol,5,High
+Unhealthy,Daily,Never Smoked,Never consumed alcohol,11,Medium
+Unhealthy,Never,Occasionally,Weekly,9,High
+Unhealthy,Never,Daily,Occasionally,9,High
+High Sugar,Weekly,Daily,Occasionally,10,High
+High Sugar,Daily,Daily,Never consumed alcohol,12,Medium
+Balanced,Daily,Daily,Occasionally,10,Medium
+Balanced,Daily,Occasionally,Weekly,7,Low
+Unhealthy,Daily,Occasionally,Weekly,5,High
+Unhealthy,Weekly,Never Smoked,Occasionally,10,Medium
+High Sugar,Weekly,Never Smoked,Weekly,7,Medium
+Unhealthy,Daily,Never Smoked,Occasionally,10,Medium
+High Sugar,Weekly,Daily,Never consumed alcohol,5,High
+Unhealthy,Weekly,Never Smoked,Occasionally,8,Medium
+High Sugar,Weekly,Occasionally,Occasionally,10,Medium
+Balanced,Weekly,Daily,Never consumed alcohol,5,Medium
+Unhealthy,Daily,Occasionally,Weekly,7,Medium
+Balanced,Never,Daily,Never consumed alcohol,7,Medium
+Unhealthy,Weekly,Occasionally,Never consumed alcohol,9,Medium

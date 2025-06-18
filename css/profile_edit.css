@@ -1,0 +1,196 @@
+body {
+  background: linear-gradient(to bottom, #00C6A9, white);
+  height: 100vh;
+  margin: 0; /* Remove default margins */
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.Signup_Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh; /* Reduced overall container height */
+  background: white; /* Slight transparency */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 600px; /* Increased width */
+  width: 40%; /* Ensures it takes the full width up to the max-width */
+  margin: 30px auto; /* Keeps it perfectly centered */
+}
+
+.Signup_Container h2 {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.8rem;
+  color: black;
+}
+
+.Links {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.login-link {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+.Field_Input {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.Field_Input label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.Field_Input input {
+  width: 100%;
+  max-width: 500px;
+  height: 45px;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.Field_Input input:focus {
+  outline: none;
+  border-color: #00C6A9;
+  box-shadow: 0 0 5px rgba(0, 198, 169, 0.5);
+}
+
+.field {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.field input[type="submit"] {
+  width: 100%; /* Make the submit button fill the container */
+  max-width: 500px; /* Optional: Set max-width for the submit button */
+  height: 45px; /* Same height as inputs */
+  font-size: 16px; /* Same font size as inputs */
+  padding: 10px; /* Add padding */
+  background-color: #00C6A9; /* Button background color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Optional: Rounded corners for the button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.field input[type="submit"]:hover {
+  background-color: #007BFF;
+}
+
+
+.line-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  margin: 20px 0; /* Adjust margin as needed */
+}
+
+.line-container::before,
+.line-container::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid #ccc; /* Line color */
+  margin: 0 10px; /* Space between the line and text */
+}
+
+.line-text {
+  font-weight: bold;
+  color: #333; /* Text color */
+}
+
+.password-help {
+  font-size: 12px;
+  color: #777; /* Lighter color for the helper text */
+  margin-top: 5px; /* Space between input field and the message */
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.flex button {
+  width: 100%; /* Ensure buttons take full width of their container */
+  max-width: 500px; /* Optional: set max-width if needed */
+  height: 45px; /* Consistent height for all buttons */
+  font-size: 16px; /* Ensure font size is consistent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px; /* Ensure padding is consistent */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+
+.flex button:hover {
+  background-color: #f1f1f1;
+}
+
+button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .Login_Container {
+    padding: 10px;
+  }
+
+  .form-title {
+    font-size: 20px;
+  }
+
+  .Field_Input input {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .field input[type="submit"] {
+    font-size: 14px;
+  }
+}
+
+
+.terms-link {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+.term_container {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
