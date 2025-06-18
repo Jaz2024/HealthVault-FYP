@@ -7,4 +7,4 @@ HealthVault is a web-based application developed for my Final Year Project (FYP)
 - **Backend**: PHP, Python
 
 
-**This project was developed with the help of ChatGPT, which assisted in both coding and refining ideas.**
+**<i>This project was developed with the help of ChatGPT, which assisted in both coding and refining ideas.</i>**
